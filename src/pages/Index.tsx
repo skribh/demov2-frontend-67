@@ -1,7 +1,6 @@
-
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Brain, Clock, CheckCircle, Heart, ArrowRight, Mail, Phone, MessageSquare, Shield, Database, Link, Puzzle } from 'lucide-react';
+import { Brain, Clock, CheckCircle, Heart, ArrowRight, Mail, Phone, MessageSquare, Shield, Database, Link, Puzzle, Briefcase, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -62,6 +61,41 @@ const Index = () => {
                 alt="Star of Life Medical Symbol" 
                 className="w-3/4 max-w-xs mx-auto md:ml-auto md:mr-0 hover-lift"
               />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stakeholder Sections - For Investors and EMS Directors */}
+      <section className="py-16 bg-white">
+        <div className="swiss-container">
+          <div className="swiss-grid gap-8">
+            {/* Investor Section */}
+            <div className="col-span-12 md:col-span-6 p-8 border-l-4 border-blue-600 bg-gradient-to-r from-blue-50 to-purple-50 hover-lift">
+              <div className="flex items-start mb-6">
+                <Briefcase className="h-12 w-12 text-blue-600 mr-4" />
+                <h3 className="text-3xl font-bold gradient-text">Interested in investing in Skribh?</h3>
+              </div>
+              <p className="text-xl mb-6">
+                The global EMS software market is projected to reach $9.3 billion by 2028, with a CAGR of 8.7% from 2023 to 2028.
+              </p>
+              <Button className="swiss-button">
+                Investor Information <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </div>
+            
+            {/* EMS Director Section */}
+            <div className="col-span-12 md:col-span-6 p-8 border-l-4 border-purple-600 bg-gradient-to-r from-purple-50 to-blue-50 hover-lift">
+              <div className="flex items-start mb-6">
+                <Users className="h-12 w-12 text-purple-600 mr-4" />
+                <h3 className="text-3xl font-bold gradient-text">EMS Directors: Transform Your Data</h3>
+              </div>
+              <p className="text-xl mb-6">
+                Access unprecedented insights from your field operations while maintaining the highest standards of data privacy and security.
+              </p>
+              <Button className="swiss-button">
+                EMS Director Solutions <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
             </div>
           </div>
         </div>
