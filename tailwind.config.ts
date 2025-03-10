@@ -74,6 +74,11 @@ export default {
 					black: '#222222',
 					white: '#FFFFFF',
 					gray: '#8E9196',
+				},
+				skribh: {
+					red: '#ea384c',
+					black: '#000000',
+					darkgray: '#222222',
 				}
 			},
 			borderRadius: {
