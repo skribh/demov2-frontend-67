@@ -87,7 +87,7 @@ const Index = () => {
       </section>
 
       {/* Trusted By Section */}
-      <section className="py-12 bg-zinc-900">
+      <section className="py-12 bg-black border-b border-zinc-800">
         <div className="skribh-container">
           <div className="text-center mb-8">
             <h3 className="text-xl font-semibold uppercase tracking-wider text-zinc-400">Trusted By</h3>
@@ -101,8 +101,51 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Software Integration Section */}
+      <section className="py-20 bg-black border-b border-zinc-800">
+        <div className="skribh-container">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">Integrates Seamlessly With Leading Software</h2>
+          <div className="skribh-grid items-center">
+            <div className="col-span-12 md:col-span-3 p-8 flex flex-col items-center">
+              <img 
+                src="/lovable-uploads/7d277f35-637d-42a5-abd7-d5d946989ce0.png" 
+                alt="ImageTrend Logo" 
+                className="h-16 object-contain mb-4" 
+              />
+              <h3 className="text-xl font-bold text-center">ImageTrend</h3>
+              <p className="text-center text-zinc-400">Complete ePCR and analytics solution</p>
+            </div>
+            <div className="col-span-12 md:col-span-3 p-8 flex flex-col items-center">
+              <img 
+                src="/lovable-uploads/f9d475b6-1e42-4bbd-8a9d-1e6a4fbf9669.png" 
+                alt="ESO Logo" 
+                className="h-16 object-contain mb-4 bg-white p-2 rounded" 
+              />
+              <h3 className="text-xl font-bold text-center">ESO</h3>
+              <p className="text-center text-zinc-400">Leading EMS data and analytics platform</p>
+            </div>
+            <div className="col-span-12 md:col-span-3 p-8 flex flex-col items-center">
+              <img 
+                src="/lovable-uploads/68707274-ee5e-4c3c-87dc-2963d58fdaa6.png" 
+                alt="HealthEMS by Sansio" 
+                className="h-16 object-contain mb-4 bg-white p-2 rounded" 
+              />
+              <h3 className="text-xl font-bold text-center">HealthEMS</h3>
+              <p className="text-center text-zinc-400">Comprehensive ePCR system by Sansio</p>
+            </div>
+            <div className="col-span-12 md:col-span-3 p-8 flex flex-col items-center">
+              <div className="h-16 flex items-center justify-center mb-4">
+                <span className="text-2xl font-bold text-red-600">Stryker</span>
+              </div>
+              <h3 className="text-xl font-bold text-center">Stryker</h3>
+              <p className="text-center text-zinc-400">Industry-leading medical equipment and software</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* EMS Directors Section with Ambulance Image */}
-      <section className="py-20 bg-zinc-900">
+      <section className="py-20 bg-black border-b border-zinc-800">
         <div className="skribh-container">
           <div className="skribh-grid">
             <div className="col-span-12 md:col-span-6 flex items-center">
@@ -141,6 +184,19 @@ const Index = () => {
                     <span>Automated quality assurance checks</span>
                   </li>
                 </ul>
+                
+                <div className="mt-8 flex flex-wrap gap-4 justify-center">
+                  <img 
+                    src="/lovable-uploads/c51a6999-8d2e-4b58-83e8-c6818fa731b3.png" 
+                    alt="NEMSIS v3.5.0 Receive & Process Compliant" 
+                    className="h-16 object-contain" 
+                  />
+                  <img 
+                    src="/lovable-uploads/bbcff65e-594c-4f28-bd7a-e3ca27ef9ed1.png" 
+                    alt="NEMSIS v3.4.0 Collect Data Compliant" 
+                    className="h-16 object-contain" 
+                  />
+                </div>
                 
                 <div className="mt-8">
                   <a href="tel:+18005555555" className="phone-button">
@@ -190,15 +246,15 @@ const Index = () => {
         <div className="skribh-container">
           <h2 className="text-4xl md:text-5xl font-bold text-left mb-16">Comprehensive Documentation Solutions</h2>
           <div className="skribh-grid">
-            <div className="col-span-12 md:col-span-4 p-6 border-b border-red-600 hover:bg-zinc-900 transition-all duration-300">
+            <div className="col-span-12 md:col-span-4 p-6 border-b border-red-600 hover:bg-black transition-all duration-300">
               <h3 className="text-2xl font-bold mb-4">Structured and unstructured data handling</h3>
               <p className="text-zinc-300">Process all types of medical information regardless of format</p>
             </div>
-            <div className="col-span-12 md:col-span-4 p-6 border-b border-red-600 hover:bg-zinc-900 transition-all duration-300">
+            <div className="col-span-12 md:col-span-4 p-6 border-b border-red-600 hover:bg-black transition-all duration-300">
               <h3 className="text-2xl font-bold mb-4">Compliance with NEMSIS standards</h3>
               <p className="text-zinc-300">Ensures all documentation meets national EMS information system requirements</p>
             </div>
-            <div className="col-span-12 md:col-span-4 p-6 border-b border-red-600 hover:bg-zinc-900 transition-all duration-300">
+            <div className="col-span-12 md:col-span-4 p-6 border-b border-red-600 hover:bg-black transition-all duration-300">
               <h3 className="text-2xl font-bold mb-4">Compatibility with popular ePCR applications</h3>
               <p className="text-zinc-300">Works with your existing electronic patient care record systems</p>
             </div>
@@ -207,7 +263,7 @@ const Index = () => {
       </section>
 
       {/* Technical Papers Section */}
-      <section className="py-20 bg-zinc-900 text-white">
+      <section className="py-20 bg-black text-white border-t border-zinc-800">
         <div className="skribh-container">
           <div className="skribh-grid">
             <div className="col-span-12 md:col-span-6">
@@ -228,7 +284,7 @@ const Index = () => {
               </div>
             </div>
             <div className="col-span-12 md:col-span-6 mt-12 md:mt-0">
-              <div className="bg-black/40 p-8 border-l-4 border-red-600">
+              <div className="bg-black p-8 border-l-4 border-red-600">
                 <h3 className="text-2xl font-bold mb-6">Transform your operations with intelligence-driven software</h3>
                 <p className="mb-6 text-zinc-300">
                   Connect every critical data point across your EMS systems for better patient outcomes and streamlined operations.
@@ -243,7 +299,7 @@ const Index = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-black border-t border-zinc-800">
         <div className="skribh-container">
           <h2 className="text-4xl font-bold mb-12 text-center">What Customers Are Saying</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -290,7 +346,7 @@ const Index = () => {
       </section>
 
       {/* Contact and Get Started Section */}
-      <section className="py-20 bg-zinc-900">
+      <section className="py-20 bg-black border-t border-zinc-800">
         <div className="skribh-container">
           <div className="skribh-grid">
             <div className="col-span-12 md:col-span-5">
@@ -315,7 +371,7 @@ const Index = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="h-14 border-2 border-red-600 rounded-none bg-zinc-800 text-white"
+                    className="h-14 border-2 border-red-600 rounded-none bg-black text-white"
                   />
                 </div>
                 <div>
@@ -324,7 +380,7 @@ const Index = () => {
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     required
-                    className="border-2 border-red-600 rounded-none min-h-[150px] bg-zinc-800 text-white"
+                    className="border-2 border-red-600 rounded-none min-h-[150px] bg-black text-white"
                   />
                 </div>
                 <Button type="submit" className="skribh-button w-full">
@@ -337,10 +393,10 @@ const Index = () => {
       </section>
 
       {/* Investment Section */}
-      <section className="py-16 bg-black">
+      <section className="py-16 bg-black border-t border-zinc-800">
         <div className="skribh-container">
           <div className="skribh-grid">
-            <div className="col-span-12 p-8 border-l-4 border-red-600 bg-zinc-900 hover-lift">
+            <div className="col-span-12 p-8 border-l-4 border-red-600 bg-black hover-lift">
               <div className="flex items-start mb-6">
                 <Briefcase className="h-12 w-12 text-red-600 mr-4" />
                 <h3 className="text-3xl font-bold">Interested in investing in Skribh?</h3>
