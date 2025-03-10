@@ -8,25 +8,25 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 0 0% 13%; /* Swiss design prefers pure black or dark grays */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 0 0% 13%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 199 84% 49%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 265 84% 49%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --popover-foreground: 0 0% 13%;
+    --primary: 0 100% 50%; /* Swiss red */
+    --primary-foreground: 0 0% 100%; 
+    --secondary: 220 13% 91%; /* Light gray for secondary elements */
+    --secondary-foreground: 0 0% 13%;
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 24 94% 53%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 0 100% 50%; /* Swiss red for accent */
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 199 84% 49%;
-    --radius: 0.75rem;
+    --ring: 0 100% 50%;
+    --radius: 0; /* Swiss design favors sharp corners */
   }
 }
 
@@ -35,10 +35,40 @@
     @apply border-border antialiased;
   }
   body {
-    @apply bg-background text-foreground font-inter;
+    @apply bg-background text-foreground font-helvetica;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-helvetica font-bold tracking-tight;
   }
 }
 
+/* Swiss Design inspired utilities */
+.swiss-grid {
+  @apply grid grid-cols-12 gap-4;
+}
+
+.swiss-container {
+  @apply container mx-auto px-4 max-w-7xl;
+}
+
+.swiss-title {
+  @apply text-5xl font-bold tracking-tight;
+}
+
+.swiss-text {
+  @apply text-base leading-relaxed;
+}
+
+.swiss-card {
+  @apply bg-white shadow-none border-0 p-6;
+}
+
+.swiss-button {
+  @apply bg-swiss-red text-white px-6 py-3 font-bold uppercase tracking-wider 
+         hover:bg-swiss-black transition-colors duration-300 rounded-none;
+}
+
+/* Keep existing animations */
 .fade-in {
   animation: fadeIn 0.6s ease-in;
 }
@@ -63,11 +93,11 @@
   }
 }
 
+/* Replace glass card with a more Swiss-like design */
 .glass-card {
-  @apply backdrop-blur-sm bg-white/80 shadow-lg;
+  @apply bg-white border-l-4 border-swiss-red shadow-sm;
 }
 
 .hover-lift {
-  @apply transition-transform duration-300 hover:-translate-y-1;
+  @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-md;
 }
-
