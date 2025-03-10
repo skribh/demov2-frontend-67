@@ -13,19 +13,19 @@
     --card-foreground: 0 0% 13%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 13%;
-    --primary: 0 100% 50%; /* Swiss red */
+    --primary: 230 80% 60%; /* Purplish blue */
     --primary-foreground: 0 0% 100%; 
-    --secondary: 220 13% 91%; /* Light gray for secondary elements */
+    --secondary: 240 60% 95%; /* Light purple-blue for secondary elements */
     --secondary-foreground: 0 0% 13%;
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 0 100% 50%; /* Swiss red for accent */
+    --accent: 250 70% 60%; /* Deeper purple for accent */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 0 100% 50%;
+    --ring: 230 80% 60%;
     --radius: 0; /* Swiss design favors sharp corners */
   }
 }
@@ -64,8 +64,8 @@
 }
 
 .swiss-button {
-  @apply bg-swiss-red text-white px-6 py-3 font-bold uppercase tracking-wider 
-         hover:bg-swiss-black transition-colors duration-300 rounded-none;
+  @apply bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 font-bold uppercase tracking-wider 
+         hover:from-blue-600 hover:to-purple-700 transition-colors duration-300 rounded-none;
 }
 
 /* Keep existing animations */
@@ -93,11 +93,22 @@
   }
 }
 
-/* Replace glass card with a more Swiss-like design */
+/* Replace glass card with a more Swiss-like design but with purple-blue accent */
 .glass-card {
-  @apply bg-white border-l-4 border-swiss-red shadow-sm;
+  @apply bg-white border-l-4 border-blue-600 shadow-sm;
 }
 
 .hover-lift {
   @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-md;
 }
+
+/* Gradient text for headings */
+.gradient-text {
+  @apply bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent;
+}
+
+/* Blue to purple gradient background */
+.gradient-bg {
+  @apply bg-gradient-to-r from-blue-500 to-purple-600;
+}
+
