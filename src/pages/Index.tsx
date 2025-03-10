@@ -56,8 +56,12 @@ const Index = () => {
                 </Button>
               </motion.div>
             </div>
-            <div className="col-span-12 md:col-span-5 mt-12 md:mt-0">
-              <div className="bg-gradient-to-r from-blue-500 to-purple-600 aspect-square w-3/4 mx-auto md:ml-auto md:mr-0"></div>
+            <div className="col-span-12 md:col-span-5 mt-12 md:mt-0 flex items-center justify-center">
+              <img 
+                src="/lovable-uploads/a41c1049-9f0b-499a-bf85-4debfe508b1d.png" 
+                alt="Star of Life Medical Symbol" 
+                className="w-3/4 max-w-xs mx-auto md:ml-auto md:mr-0 hover-lift"
+              />
             </div>
           </div>
         </div>
@@ -127,6 +131,32 @@ const Index = () => {
                 <p className="text-swiss-gray">{benefit.description}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Ambulance Image Section */}
+      <section className="py-20 bg-gradient-to-r from-blue-900 to-purple-900 text-white">
+        <div className="swiss-container">
+          <div className="swiss-grid">
+            <div className="col-span-12 md:col-span-6 flex items-center">
+              <div>
+                <h2 className="text-4xl md:text-5xl font-bold mb-8">Real-Time Documentation</h2>
+                <p className="text-xl mb-8">
+                  Our AI works where you do - in the field, documenting patient care in real-time while you focus on what matters most.
+                </p>
+                <Button className="bg-white text-blue-900 hover:bg-blue-100 transition-colors">
+                  See how it works
+                </Button>
+              </div>
+            </div>
+            <div className="col-span-12 md:col-span-6 mt-12 md:mt-0">
+              <img 
+                src="/lovable-uploads/ca7ded9c-d98a-4e90-8aba-9df8879192f3.png" 
+                alt="Ambulance responding to emergency" 
+                className="w-full rounded-md shadow-xl"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -204,6 +234,13 @@ const Index = () => {
               <p className="text-xl text-swiss-gray mb-8">
                 Contact us to learn how Skribh can transform your documentation workflow and improve patient care.
               </p>
+              <div className="mb-8">
+                <img 
+                  src="/lovable-uploads/a41c1049-9f0b-499a-bf85-4debfe508b1d.png" 
+                  alt="Star of Life Medical Symbol" 
+                  className="w-24 h-24 opacity-60"
+                />
+              </div>
             </div>
             <div className="col-span-12 md:col-span-6 md:col-start-7">
               <form onSubmit={handleContact} className="space-y-6">
