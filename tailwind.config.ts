@@ -79,6 +79,9 @@ export default {
 					red: '#ea384c',
 					black: '#000000',
 					darkgray: '#222222',
+					blueprint: '#4361EE',
+					purple: '#7209B7',
+					lightblue: '#4CC9F0',
 				}
 			},
 			borderRadius: {

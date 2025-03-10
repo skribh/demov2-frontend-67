@@ -9,22 +9,22 @@
   :root {
     --background: 0 0% 0%; /* Black background */
     --foreground: 0 0% 98%; /* White text */
-    --card: 0 0% 5%;
+    --card: 0 0% 0%;
     --card-foreground: 0 0% 98%;
-    --popover: 0 0% 5%;
+    --popover: 0 0% 0%;
     --popover-foreground: 0 0% 98%;
     --primary: 0 84% 50%; /* Vibrant red */
     --primary-foreground: 0 0% 98%; 
     --secondary: 0 0% 15%; /* Dark gray for secondary elements */
     --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 15%;
+    --muted: 0 0% 10%;
     --muted-foreground: 0 0% 70%;
     --accent: 0 84% 50%; /* Red accent */
     --accent-foreground: 0 0% 98%;
     --destructive: 0 84% 50%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
+    --border: 0 0% 10%;
+    --input: 0 0% 10%;
     --ring: 0 84% 50%;
     --radius: 0; /* Sharp corners */
   }
@@ -70,7 +70,7 @@
 }
 
 .skribh-card {
-  @apply bg-zinc-900 border-l-4 border-red-600 p-6;
+  @apply bg-black border-l-4 border-red-600 p-6;
 }
 
 /* Keep existing animations */
@@ -100,16 +100,16 @@
 
 /* Red and black glass effect */
 .glass-card {
-  @apply bg-zinc-900/80 border-l-4 border-red-600 shadow-md;
+  @apply bg-black/80 border-l-4 border-red-600 shadow-md;
 }
 
 .hover-lift {
   @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
 }
 
-/* Red gradient text for headings */
+/* Blue/Purple gradient text for headings */
 .gradient-text {
-  @apply bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-skribh-blueprint to-skribh-purple bg-clip-text text-transparent;
 }
 
 /* Red gradient background */
@@ -125,10 +125,20 @@
 
 /* Testimonial card */
 .testimonial-card {
-  @apply bg-zinc-900 p-6 border-t-4 border-red-600 shadow-lg;
+  @apply bg-black p-6 border-t-4 border-red-600 shadow-lg;
 }
 
 /* Trusted by section */
 .trusted-logo {
   @apply grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 max-h-16 object-contain;
+}
+
+/* Blue/Purple gradient backgrounds */
+.blueprint-purple-gradient {
+  @apply bg-gradient-to-r from-skribh-blueprint to-skribh-purple;
+}
+
+/* Section styles */
+.section-dark {
+  @apply bg-black border-b border-red-600/20;
 }
