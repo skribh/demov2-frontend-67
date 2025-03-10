@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
@@ -86,17 +85,20 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Trusted By Section */}
+      {/* NEMSIS Badges Section */}
       <section className="py-12 bg-black border-b border-zinc-800">
         <div className="skribh-container">
-          <div className="text-center mb-8">
-            <h3 className="text-xl font-semibold uppercase tracking-wider text-zinc-400">Trusted By</h3>
-          </div>
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-            <img src="/lovable-uploads/05fb8946-1d85-4e07-9d6b-ca9cb8c4d5d5.png" alt="EMS Logo" className="trusted-logo" />
-            <img src="/lovable-uploads/cb067d07-ae31-495d-8c63-e5b5f5928867.png" alt="Hospital Logo" className="trusted-logo" />
-            <img src="/lovable-uploads/eeaa2efb-e5e7-4a48-a3c1-5ebe7d80cc6f.png" alt="Fire Department Logo" className="trusted-logo" />
-            <img src="/lovable-uploads/a41c1049-9f0b-499a-bf85-4debfe508b1d.png" alt="Star of Life" className="trusted-logo" />
+            <img 
+              src="/lovable-uploads/c51a6999-8d2e-4b58-83e8-c6818fa731b3.png" 
+              alt="NEMSIS v3.5.0 Receive & Process Compliant" 
+              className="h-20 object-contain" 
+            />
+            <img 
+              src="/lovable-uploads/bbcff65e-594c-4f28-bd7a-e3ca27ef9ed1.png" 
+              alt="NEMSIS v3.4.0 Collect Data Compliant" 
+              className="h-20 object-contain" 
+            />
           </div>
         </div>
       </section>
@@ -104,15 +106,15 @@ const Index = () => {
       {/* Software Integration Section */}
       <section className="py-20 bg-black border-b border-zinc-800">
         <div className="skribh-container">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">Integrates Seamlessly With Leading Software</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">Integrates Seamlessly With Leading ePCRs</h2>
           <div className="skribh-grid items-center">
             <div className="col-span-12 md:col-span-3 p-8 flex flex-col items-center">
               <img 
-                src="/lovable-uploads/7d277f35-637d-42a5-abd7-d5d946989ce0.png" 
-                alt="ImageTrend Logo" 
+                src="/lovable-uploads/c2102a71-4e1c-4450-843e-227b6aa25c53.png" 
+                alt="ImageTrend Elite Logo" 
                 className="h-16 object-contain mb-4" 
               />
-              <h3 className="text-xl font-bold text-center">ImageTrend</h3>
+              <h3 className="text-xl font-bold text-center">ImageTrend Elite</h3>
               <p className="text-center text-zinc-400">Complete ePCR and analytics solution</p>
             </div>
             <div className="col-span-12 md:col-span-3 p-8 flex flex-col items-center">
