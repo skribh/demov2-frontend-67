@@ -6,6 +6,7 @@ import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/use-toast';
+import { Link as RouterLink } from 'react-router-dom';
 
 const Index = () => {
   const { toast } = useToast();
@@ -66,12 +67,11 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Stakeholder Sections - For Investors and EMS Directors */}
+      {/* Investor Section - Moved from stakeholders to its own section */}
       <section className="py-16 bg-white">
         <div className="swiss-container">
-          <div className="swiss-grid gap-8">
-            {/* Investor Section */}
-            <div className="col-span-12 md:col-span-6 p-8 border-l-4 border-blue-600 bg-gradient-to-r from-blue-50 to-purple-50 hover-lift">
+          <div className="swiss-grid">
+            <div className="col-span-12 p-8 border-l-4 border-blue-600 bg-gradient-to-r from-blue-50 to-purple-50 hover-lift">
               <div className="flex items-start mb-6">
                 <Briefcase className="h-12 w-12 text-blue-600 mr-4" />
                 <h3 className="text-3xl font-bold gradient-text">Interested in investing in Skribh?</h3>
@@ -79,23 +79,39 @@ const Index = () => {
               <p className="text-xl mb-6">
                 The global EMS software market is projected to reach $9.3 billion by 2028, with a CAGR of 8.7% from 2023 to 2028.
               </p>
-              <Button className="swiss-button">
-                Investor Information <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+              <RouterLink to="/investors">
+                <Button className="swiss-button">
+                  Investor Information <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </RouterLink>
             </div>
-            
-            {/* EMS Director Section */}
-            <div className="col-span-12 md:col-span-6 p-8 border-l-4 border-purple-600 bg-gradient-to-r from-purple-50 to-blue-50 hover-lift">
-              <div className="flex items-start mb-6">
-                <Users className="h-12 w-12 text-purple-600 mr-4" />
-                <h3 className="text-3xl font-bold gradient-text">EMS Directors: Transform Your Data</h3>
+          </div>
+        </div>
+      </section>
+
+      {/* Merged EMS Directors/Real-Time Documentation Section with Ambulance Image */}
+      <section className="py-20 bg-gradient-to-r from-blue-900 to-purple-900 text-white">
+        <div className="swiss-container">
+          <div className="swiss-grid">
+            <div className="col-span-12 md:col-span-6 flex items-center">
+              <div>
+                <h2 className="text-4xl md:text-5xl font-bold mb-8">EMS Directors: Transform Your Data</h2>
+                <p className="text-xl mb-8">
+                  Access unprecedented insights from your field operations while maintaining the highest standards of data privacy and security. Our AI works where you do - in the field, documenting patient care in real-time.
+                </p>
+                <RouterLink to="/ems-directors">
+                  <Button className="bg-white text-blue-900 hover:bg-blue-100 transition-colors">
+                    EMS Director Solutions <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </RouterLink>
               </div>
-              <p className="text-xl mb-6">
-                Access unprecedented insights from your field operations while maintaining the highest standards of data privacy and security.
-              </p>
-              <Button className="swiss-button">
-                EMS Director Solutions <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+            </div>
+            <div className="col-span-12 md:col-span-6 mt-12 md:mt-0">
+              <img 
+                src="/lovable-uploads/ca7ded9c-d98a-4e90-8aba-9df8879192f3.png" 
+                alt="Ambulance responding to emergency" 
+                className="w-full rounded-md shadow-xl"
+              />
             </div>
           </div>
         </div>
@@ -165,32 +181,6 @@ const Index = () => {
                 <p className="text-swiss-gray">{benefit.description}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Ambulance Image Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-900 to-purple-900 text-white">
-        <div className="swiss-container">
-          <div className="swiss-grid">
-            <div className="col-span-12 md:col-span-6 flex items-center">
-              <div>
-                <h2 className="text-4xl md:text-5xl font-bold mb-8">Real-Time Documentation</h2>
-                <p className="text-xl mb-8">
-                  Our AI works where you do - in the field, documenting patient care in real-time while you focus on what matters most.
-                </p>
-                <Button className="bg-white text-blue-900 hover:bg-blue-100 transition-colors">
-                  See how it works
-                </Button>
-              </div>
-            </div>
-            <div className="col-span-12 md:col-span-6 mt-12 md:mt-0">
-              <img 
-                src="/lovable-uploads/ca7ded9c-d98a-4e90-8aba-9df8879192f3.png" 
-                alt="Ambulance responding to emergency" 
-                className="w-full rounded-md shadow-xl"
-              />
-            </div>
           </div>
         </div>
       </section>
