@@ -67,28 +67,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Investor Section - Moved from stakeholders to its own section */}
-      <section className="py-16 bg-white">
-        <div className="swiss-container">
-          <div className="swiss-grid">
-            <div className="col-span-12 p-8 border-l-4 border-blue-600 bg-gradient-to-r from-blue-50 to-purple-50 hover-lift">
-              <div className="flex items-start mb-6">
-                <Briefcase className="h-12 w-12 text-blue-600 mr-4" />
-                <h3 className="text-3xl font-bold gradient-text">Interested in investing in Skribh?</h3>
-              </div>
-              <p className="text-xl mb-6">
-                The global EMS software market is projected to reach $9.3 billion by 2028, with a CAGR of 8.7% from 2023 to 2028.
-              </p>
-              <RouterLink to="/investors">
-                <Button className="swiss-button">
-                  Investor Information <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </RouterLink>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Merged EMS Directors/Real-Time Documentation Section with Ambulance Image */}
       <section className="py-20 bg-gradient-to-r from-blue-900 to-purple-900 text-white">
         <div className="swiss-container">
@@ -149,66 +127,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Benefits Section - Swiss style with strong visual contrast */}
-      <section className="py-20 bg-white">
-        <div className="swiss-container">
-          <h2 className="text-4xl md:text-5xl font-bold text-left mb-16">Unlocking Efficiency and Accuracy</h2>
-          <div className="swiss-grid">
-            {[
-              {
-                icon: <Clock className="h-12 w-12 text-blue-600" />,
-                title: "Reduced Documentation Time",
-                metric: "60%",
-                description: "Faster documentation process"
-              },
-              {
-                icon: <CheckCircle className="h-12 w-12 text-blue-600" />,
-                title: "Increased Accuracy",
-                metric: "95%",
-                description: "Documentation accuracy rate"
-              },
-              {
-                icon: <Heart className="h-12 w-12 text-blue-600" />,
-                title: "Improved Patient Care",
-                metric: "40%",
-                description: "More time for patient care"
-              }
-            ].map((benefit, index) => (
-              <div key={index} className="col-span-12 md:col-span-4 p-6 border-t-4 border-blue-600">
-                <div className="mb-6">{benefit.icon}</div>
-                <div className="text-5xl font-bold text-swiss-black mb-4">{benefit.metric}</div>
-                <h3 className="text-2xl font-bold mb-2">{benefit.title}</h3>
-                <p className="text-swiss-gray">{benefit.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* AI Section - Clean grid-based layout */}
-      <section className="py-20 bg-swiss-black text-white">
-        <div className="swiss-container">
-          <div className="swiss-grid">
-            <div className="col-span-12 md:col-span-5">
-              <h2 className="text-4xl md:text-5xl font-bold mb-8">Advanced AI for Precise Documentation</h2>
-              <p className="text-xl mb-8">
-                Our machine learning models identify patterns in audio data to generate accurate medical documentation.
-              </p>
-              <p className="text-xl">
-                Through iterative fine-tuning, Skribh constantly improves its understanding of medical terminology and protocols.
-              </p>
-            </div>
-            <div className="col-span-12 md:col-span-6 md:col-start-7 mt-12 md:mt-0">
-              <div className="grid grid-cols-6 gap-4 h-full">
-                <div className="col-span-4 col-start-1 row-span-3 bg-white"></div>
-                <div className="col-span-2 col-start-5 row-span-1 bg-gradient-to-r from-blue-500 to-purple-600"></div>
-                <div className="col-span-2 col-start-5 row-span-2 bg-swiss-gray"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Solutions Section - Grid-based asymmetric layout */}
       <section className="py-20 bg-white">
         <div className="swiss-container">
@@ -230,26 +148,39 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonial Section */}
-      <section className="py-20 gradient-bg text-white">
+      {/* AI Section with Technical Papers */}
+      <section className="py-20 bg-swiss-black text-white">
         <div className="swiss-container">
-          <h2 className="text-4xl md:text-5xl font-bold text-left mb-16">Trusted by Healthcare Professionals</h2>
-          <div className="max-w-4xl">
-            <blockquote className="text-3xl font-light italic mb-8">
-              "Skribh has transformed our documentation process, allowing our paramedics to focus more on patient care rather than paperwork."
-            </blockquote>
-            <div className="flex items-center">
-              <div className="w-16 h-16 bg-white rounded-full mr-4"></div>
-              <div>
-                <div className="font-bold text-xl">Dr. Sarah Johnson</div>
-                <div>EMS Medical Director</div>
+          <div className="swiss-grid">
+            <div className="col-span-12 md:col-span-5">
+              <h2 className="text-4xl md:text-5xl font-bold mb-8">Advanced AI for Precise Documentation</h2>
+              <p className="text-xl mb-8">
+                Our machine learning models identify patterns in audio data to generate accurate medical documentation.
+              </p>
+              <p className="text-xl mb-8">
+                Through iterative fine-tuning, Skribh constantly improves its understanding of medical terminology and protocols.
+              </p>
+              <div className="flex gap-4">
+                <Button variant="outline" className="bg-white text-swiss-black hover:bg-blue-100">
+                  Read Technical Whitepaper
+                </Button>
+                <Button variant="outline" className="bg-white text-swiss-black hover:bg-blue-100">
+                  Read Accuracy Whitepaper
+                </Button>
+              </div>
+            </div>
+            <div className="col-span-12 md:col-span-6 md:col-start-7 mt-12 md:mt-0">
+              <div className="grid grid-cols-6 gap-4 h-full">
+                <div className="col-span-4 col-start-1 row-span-3 bg-white"></div>
+                <div className="col-span-2 col-start-5 row-span-1 bg-gradient-to-r from-blue-500 to-purple-600"></div>
+                <div className="col-span-2 col-start-5 row-span-2 bg-swiss-gray"></div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Contact Section - Swiss style form with clear hierarchy */}
+      {/* Contact and Investment Section */}
       <section className="py-20 bg-white">
         <div className="swiss-container">
           <div className="swiss-grid">
@@ -291,6 +222,28 @@ const Index = () => {
                   Send Message <Mail className="ml-2 h-5 w-5" />
                 </Button>
               </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Investment Section */}
+      <section className="py-16 bg-white">
+        <div className="swiss-container">
+          <div className="swiss-grid">
+            <div className="col-span-12 p-8 border-l-4 border-blue-600 bg-gradient-to-r from-blue-50 to-purple-50 hover-lift">
+              <div className="flex items-start mb-6">
+                <Briefcase className="h-12 w-12 text-blue-600 mr-4" />
+                <h3 className="text-3xl font-bold gradient-text">Interested in investing in Skribh?</h3>
+              </div>
+              <p className="text-xl mb-6">
+                The global EMS software market is projected to reach $9.3 billion by 2028, with a CAGR of 8.7% from 2023 to 2028.
+              </p>
+              <RouterLink to="/investors">
+                <Button className="swiss-button">
+                  Investor Information <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </RouterLink>
             </div>
           </div>
         </div>
