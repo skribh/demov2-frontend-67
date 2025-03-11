@@ -3,44 +3,69 @@ import { ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { Card } from '@/components/ui/card';
 
 const Investors = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
     {
-      id: 'intro',
+      id: 'core-offering',
       content: (
         <div className="flex flex-col items-center justify-center h-full">
-          <h2 className="text-6xl font-bold mb-8 gradient-text">Skribh</h2>
-          <p className="text-2xl text-center mb-8 max-w-3xl">
-            Transforming EMS Documentation with AI
+          <h2 className="text-6xl font-bold mb-8 gradient-text">Skribh Auris</h2>
+          <p className="text-2xl text-center mb-8 max-w-3xl italic">
+            Automated, HIPAA-compliant medical documentation via ambient AI transcription
           </p>
-          <div className="bg-white/10 p-8 backdrop-blur-sm rounded-lg">
-            <p className="text-xl text-center">
-              Investment Opportunity in Healthcare AI
-            </p>
+          <div className="bg-white/10 p-8 backdrop-blur-sm rounded-lg w-full max-w-3xl">
+            <ul className="space-y-4 text-xl">
+              <li className="flex items-center">
+                <span className="inline-block w-3 h-3 bg-red-600 rounded-full mr-3"></span>
+                Real-time NEMSIS-compliant report generation
+              </li>
+              <li className="flex items-center">
+                <span className="inline-block w-3 h-3 bg-red-600 rounded-full mr-3"></span>
+                ICD-10 coding & litigation-ready audit trails
+              </li>
+            </ul>
           </div>
         </div>
       )
     },
     {
-      id: 'market',
+      id: 'problem',
       content: (
         <div className="flex flex-col h-full">
-          <h2 className="text-4xl font-bold mb-8 gradient-text">Market Opportunity</h2>
+          <h2 className="text-4xl font-bold mb-8 gradient-text">Documentation Burden Crippling EMS Efficiency</h2>
           <div className="space-y-6">
             <div className="bg-white/5 p-6 rounded-lg">
-              <p className="text-xl mb-4">
-                The global EMS software market is projected to reach $9.3 billion by 2028, with a CAGR of 8.7% from 2023 to 2028.
+              <p className="text-xl mb-4 font-bold">
+                25-30% of medics' time spent manually transcribing interactions
               </p>
             </div>
             <div className="bg-white/5 p-6 rounded-lg">
-              <h3 className="text-2xl font-bold mb-4">Market Highlights</h3>
+              <h3 className="text-2xl font-bold mb-4">Consequences</h3>
               <ul className="space-y-4 text-lg">
-                <li>• EMS agencies spend 40% of their time on documentation</li>
-                <li>• 85% of EMS directors report documentation as their biggest operational challenge</li>
-                <li>• AI in healthcare market growing at 39.4% CAGR</li>
+                <li className="flex items-start">
+                  <span className="inline-block w-2 h-2 bg-red-600 rounded-full mr-3 mt-2"></span>
+                  53% EMT burnout risk | 18.5% nurse turnover vs 15.9% nat'l avg
+                </li>
+                <li className="flex items-start">
+                  <span className="inline-block w-2 h-2 bg-red-600 rounded-full mr-3 mt-2"></span>
+                  44% emergency nurses report emotional exhaustion
+                </li>
+                <li className="flex items-start">
+                  <span className="inline-block w-2 h-2 bg-red-600 rounded-full mr-3 mt-2"></span>
+                  Dispatch delays from after-shift documentation marathons
+                </li>
+                <li className="flex items-start">
+                  <span className="inline-block w-2 h-2 bg-red-600 rounded-full mr-3 mt-2"></span>
+                  Providers distracted by documentation instead of focusing on patient care
+                </li>
+                <li className="flex items-start">
+                  <span className="inline-block w-2 h-2 bg-red-600 rounded-full mr-3 mt-2"></span>
+                  Documentation not complete/accurate
+                </li>
               </ul>
             </div>
           </div>
@@ -48,55 +73,369 @@ const Investors = () => {
       )
     },
     {
-      id: 'highlights',
+      id: 'current-solutions',
       content: (
         <div className="flex flex-col h-full">
-          <h2 className="text-4xl font-bold mb-8 gradient-text">Investment Highlights</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-6 bg-white/5 rounded-lg border-t-4 border-red-600">
-              <h3 className="text-2xl font-bold mb-4">Proprietary AI Technology</h3>
-              <p className="text-lg">
-                Our specialized models are trained on medical terminology and EMS protocols,
-                delivering accuracy rates exceeding 95% in documentation.
-              </p>
+          <h2 className="text-4xl font-bold mb-8 gradient-text">Current Solutions Fall Short</h2>
+          <div className="overflow-hidden rounded-lg bg-white/5">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="bg-red-600/20">
+                  <th className="p-4 text-left text-xl border-b border-white/10">Solution</th>
+                  <th className="p-4 text-left text-xl border-b border-white/10">Limitations</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-white/10">
+                  <td className="p-4 text-lg font-medium">ChatGPT</td>
+                  <td className="p-4 text-lg">Non-HIPAA, workflow-disconnected</td>
+                </tr>
+                <tr className="border-b border-white/10">
+                  <td className="p-4 text-lg font-medium">Traditional Dictation</td>
+                  <td className="p-4 text-lg">No time savings (45-60 mins/report)</td>
+                </tr>
+                <tr>
+                  <td className="p-4 text-lg font-medium">Body Cameras</td>
+                  <td className="p-4 text-lg">$12k/unit + $200/mo storage costs, privacy concerns</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 'solution',
+      content: (
+        <div className="flex flex-col h-full">
+          <h2 className="text-4xl font-bold mb-8 gradient-text">Our Solution</h2>
+          <h3 className="text-2xl font-bold mb-6">Three-Stage AI Pipeline</h3>
+          <div className="grid grid-cols-1 gap-4 mb-8">
+            <div className="bg-white/5 p-6 rounded-lg border-l-4 border-red-600">
+              <p className="text-xl font-bold">1. Speech → Transcript</p>
+              <p className="text-lg opacity-80">(wave2vec 2.0, WER &lt;10%)</p>
             </div>
-            <div className="p-6 bg-white/5 rounded-lg border-t-4 border-red-600">
-              <h3 className="text-2xl font-bold mb-4">Scalable SaaS Model</h3>
-              <p className="text-lg">
-                Subscription-based revenue with high margins and predictable cash flows.
-                Each EMS agency client represents 5-1000+ paramedic subscriptions.
-              </p>
+            <div className="bg-white/5 p-6 rounded-lg border-l-4 border-red-600">
+              <p className="text-xl font-bold">2. Transcript → NEMSIS JSON</p>
+              <p className="text-lg opacity-80">(NER with 90% F1-score)</p>
             </div>
-            <div className="p-6 bg-white/5 rounded-lg border-t-4 border-red-600">
-              <h3 className="text-2xl font-bold mb-4">First-Mover Advantage</h3>
-              <p className="text-lg">
-                Pioneer in AI-based EMS documentation with early partnerships with major
-                agencies and integration with leading ePCR software providers.
-              </p>
+            <div className="bg-white/5 p-6 rounded-lg border-l-4 border-red-600">
+              <p className="text-xl font-bold">3. JSON → ICD-10 Codes</p>
+              <p className="text-lg opacity-80">(RAG-enhanced coding)</p>
+            </div>
+          </div>
+          <div className="bg-red-600/20 p-4 rounded-lg inline-block">
+            <p className="text-xl font-bold">Output: Audit-ready reports in &lt;5 mins</p>
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 'why-now',
+      content: (
+        <div className="flex flex-col h-full">
+          <h2 className="text-4xl font-bold mb-8 gradient-text">Why Now?</h2>
+          <h3 className="text-2xl font-bold mb-6">Perfect Storm for Adoption</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="space-y-4">
+              <h4 className="text-xl font-bold border-b border-white/20 pb-2">Technical</h4>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <span className="inline-block w-2 h-2 bg-red-600 rounded-full mr-3 mt-2"></span>
+                  Open-source models (wave2vec 2.0) enable low-cost STT
+                </li>
+                <li className="flex items-start">
+                  <span className="inline-block w-2 h-2 bg-red-600 rounded-full mr-3 mt-2"></span>
+                  Cloud infra maturity (Kubernetes/Docker)
+                </li>
+              </ul>
+            </div>
+            <div className="space-y-4">
+              <h4 className="text-xl font-bold border-b border-white/20 pb-2">Market</h4>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <span className="inline-block w-2 h-2 bg-red-600 rounded-full mr-3 mt-2"></span>
+                  AI transcription in doctor offices and AI translation in EMS dispatch signals newfound readiness
+                </li>
+                <li className="flex items-start">
+                  <span className="inline-block w-2 h-2 bg-red-600 rounded-full mr-3 mt-2"></span>
+                  73% EMS agencies cite documentation as #1 cost center
+                </li>
+                <li className="flex items-start">
+                  <span className="inline-block w-2 h-2 bg-red-600 rounded-full mr-3 mt-2"></span>
+                  CMS pushing for automated quality reporting
+                </li>
+                <li className="flex items-start">
+                  <span className="inline-block w-2 h-2 bg-red-600 rounded-full mr-3 mt-2"></span>
+                  Other players have not entered the market
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       )
     },
     {
-      id: 'financials',
+      id: 'market-size',
       content: (
         <div className="flex flex-col h-full">
-          <h2 className="text-4xl font-bold mb-8 gradient-text">Financial Projection</h2>
-          <div className="bg-white/10 p-8 backdrop-blur-sm rounded-lg">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              <div>
-                <div className="text-5xl font-bold mb-2">$2.4M</div>
-                <p className="text-xl">Year 1 Projected Revenue</p>
+          <h2 className="text-4xl font-bold mb-8 gradient-text">Market Size</h2>
+          <div className="bg-white/10 p-8 backdrop-blur-sm rounded-lg mb-8">
+            <h3 className="text-2xl font-bold mb-4">$1.2B Addressable EMS Market</h3>
+            <ul className="space-y-4 text-lg mb-6">
+              <li className="flex items-start">
+                <span className="inline-block w-2 h-2 bg-red-600 rounded-full mr-3 mt-2"></span>
+                21,200 EMS agencies in US
+              </li>
+              <li className="flex items-start">
+                <span className="inline-block w-2 h-2 bg-red-600 rounded-full mr-3 mt-2"></span>
+                A2B60M annual 911 calls requiring documentation
+              </li>
+            </ul>
+            
+            <h3 className="text-2xl font-bold mb-4">Upsell Potential</h3>
+            <ul className="space-y-4 text-lg">
+              <li className="flex items-start">
+                <span className="inline-block w-2 h-2 bg-red-600 rounded-full mr-3 mt-2"></span>
+                Hospital ER integration ($380M/yr)
+              </li>
+              <li className="flex items-start">
+                <span className="inline-block w-2 h-2 bg-red-600 rounded-full mr-3 mt-2"></span>
+                Nursing workflow automation ($620M/yr)
+              </li>
+            </ul>
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 'competitive-landscape',
+      content: (
+        <div className="flex flex-col h-full">
+          <h2 className="text-4xl font-bold mb-8 gradient-text">Competitive Landscape</h2>
+          <div className="overflow-hidden rounded-lg bg-white/5 mb-8">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="bg-red-600/20">
+                  <th className="p-4 text-left text-xl border-b border-white/10">Competitor</th>
+                  <th className="p-4 text-left text-xl border-b border-white/10">Weakness vs Skribh</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-white/10">
+                  <td className="p-4 text-lg font-medium">ePCRs</td>
+                  <td className="p-4 text-lg">Manual entry workflows, focused on capturing market share for existing products</td>
+                </tr>
+                <tr className="border-b border-white/10">
+                  <td className="p-4 text-lg font-medium">Pulsara</td>
+                  <td className="p-4 text-lg">No ambient listening</td>
+                </tr>
+                <tr>
+                  <td className="p-4 text-lg font-medium">Axon</td>
+                  <td className="p-4 text-lg">Focused on bodycams, not AI</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <h3 className="text-2xl font-bold mb-4">Why us?</h3>
+          <ul className="space-y-3">
+            <li className="flex items-start">
+              <span className="inline-block w-2 h-2 bg-red-600 rounded-full mr-3 mt-2"></span>
+              Timing
+            </li>
+            <li className="flex items-start">
+              <span className="inline-block w-2 h-2 bg-red-600 rounded-full mr-3 mt-2"></span>
+              Focus on AI
+            </li>
+            <li className="flex items-start">
+              <span className="inline-block w-2 h-2 bg-red-600 rounded-full mr-3 mt-2"></span>
+              Purpose-built for EMS documentation workflows
+            </li>
+          </ul>
+        </div>
+      )
+    },
+    {
+      id: 'product',
+      content: (
+        <div className="flex flex-col h-full">
+          <h2 className="text-4xl font-bold mb-8 gradient-text">Product</h2>
+          <h3 className="text-2xl font-bold mb-6">Technical Differentiators</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Card className="bg-black/50 border-red-600/30">
+              <div className="p-6">
+                <h4 className="text-xl font-bold mb-3">Heavy-Tailed Self-Regularization</h4>
+                <p className="text-lg opacity-80">Advanced diagnostics ensure consistent performance even with unusual medical cases</p>
               </div>
-              <div>
-                <div className="text-5xl font-bold mb-2">$12.8M</div>
-                <p className="text-xl">Year 3 Projected Revenue</p>
+            </Card>
+            <Card className="bg-black/50 border-red-600/30">
+              <div className="p-6">
+                <h4 className="text-xl font-bold mb-3">HIPAA-certified Architecture</h4>
+                <p className="text-lg opacity-80">AES-256 encryption with secure mobile architecture</p>
               </div>
-              <div>
-                <div className="text-5xl font-bold mb-2">82%</div>
-                <p className="text-xl">Gross Margin at Scale</p>
+            </Card>
+            <Card className="bg-black/50 border-red-600/30">
+              <div className="p-6">
+                <h4 className="text-xl font-bold mb-3">Reinforcement Learning</h4>
+                <p className="text-lg opacity-80">Continuous improvement from medic feedback loops</p>
               </div>
+            </Card>
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 'team',
+      content: (
+        <div className="flex flex-col items-center justify-center h-full">
+          <h2 className="text-4xl font-bold mb-8 gradient-text">Our Team</h2>
+          <div className="bg-white/10 p-8 backdrop-blur-sm rounded-lg w-full max-w-3xl">
+            <p className="text-xl text-center italic">
+              (To be filled with team details - placeholder)
+            </p>
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 'business-model',
+      content: (
+        <div className="flex flex-col h-full">
+          <h2 className="text-4xl font-bold mb-8 gradient-text">Business Model</h2>
+          <h3 className="text-2xl font-bold mb-6">Subscription Tiers</h3>
+          <div className="overflow-hidden rounded-lg bg-white/5">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="bg-red-600/20">
+                  <th className="p-4 text-left text-xl border-b border-white/10">Tier</th>
+                  <th className="p-4 text-left text-xl border-b border-white/10">Price</th>
+                  <th className="p-4 text-left text-xl border-b border-white/10">Features</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-white/10">
+                  <td className="p-4 text-lg font-medium">Basic</td>
+                  <td className="p-4 text-lg">$299/unit/mo</td>
+                  <td className="p-4 text-lg">Real-time transcription</td>
+                </tr>
+                <tr>
+                  <td className="p-4 text-lg font-medium">Pro</td>
+                  <td className="p-4 text-lg">$599/unit/mo</td>
+                  <td className="p-4 text-lg">+ ICD coding & analytics</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 'market-entry',
+      content: (
+        <div className="flex flex-col h-full">
+          <h2 className="text-4xl font-bold mb-8 gradient-text">Market Entry</h2>
+          <h3 className="text-2xl font-bold mb-6">Pilot Roadmap</h3>
+          <div className="space-y-6">
+            <div className="flex">
+              <div className="w-20 h-20 rounded-full bg-red-600 flex items-center justify-center text-2xl font-bold mr-6">
+                I
+              </div>
+              <div className="flex-1 bg-white/5 p-6 rounded-lg">
+                <h4 className="text-xl font-bold mb-2">Phase I</h4>
+                <p className="text-lg">East Jefferson Ambulance (500 hrs audio validation)</p>
+              </div>
+            </div>
+            <div className="flex">
+              <div className="w-20 h-20 rounded-full bg-red-600 flex items-center justify-center text-2xl font-bold mr-6">
+                II
+              </div>
+              <div className="flex-1 bg-white/5 p-6 rounded-lg">
+                <h4 className="text-xl font-bold mb-2">Phase II</h4>
+                <p className="text-lg">3-state rollout (LA, TX, CO)</p>
+              </div>
+            </div>
+            <div className="flex">
+              <div className="w-20 h-20 rounded-full bg-red-600 flex items-center justify-center text-2xl font-bold mr-6">
+                III
+              </div>
+              <div className="flex-1 bg-white/5 p-6 rounded-lg">
+                <h4 className="text-xl font-bold mb-2">Phase III</h4>
+                <p className="text-lg">CMS partnership for reimbursement</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 'financial-projections',
+      content: (
+        <div className="flex flex-col h-full">
+          <h2 className="text-4xl font-bold mb-8 gradient-text">Financial Projections</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
+            <div className="bg-white/10 p-8 rounded-lg">
+              <div className="text-5xl font-bold mb-2">$2.1M</div>
+              <p className="text-xl">Year 1 ARR (35 EMS agencies)</p>
+            </div>
+            <div className="bg-white/10 p-8 rounded-lg">
+              <div className="text-5xl font-bold mb-2">$19.8M</div>
+              <p className="text-xl">Year 3 ARR (330 agencies + hospital ERs)</p>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 'vision',
+      content: (
+        <div className="flex flex-col items-center justify-center h-full text-center">
+          <h2 className="text-4xl font-bold mb-8 gradient-text">Vision</h2>
+          <p className="text-xl mb-8 max-w-3xl italic">
+            If all goes well, what does this company look like in 10 years?
+          </p>
+          <div className="bg-white/10 p-8 backdrop-blur-sm rounded-lg w-full max-w-3xl">
+            <p className="text-2xl font-bold">
+              "Stethoscope for Documentation"
+            </p>
+            <p className="text-xl mt-4">
+              AI scribe in every EMS vehicle globally by 2035
+            </p>
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 'product-roadmap',
+      content: (
+        <div className="flex flex-col h-full">
+          <h2 className="text-4xl font-bold mb-8 gradient-text">Product Roadmap</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-white/5 p-8 rounded-lg">
+              <div className="text-3xl font-bold mb-4">2025</div>
+              <p className="text-xl">Voice biomarker integration (stroke detection)</p>
+            </div>
+            <div className="bg-white/5 p-8 rounded-lg">
+              <div className="text-3xl font-bold mb-4">2026</div>
+              <p className="text-xl">Multilingual support (Spanish/ALS-compatible)</p>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 'risk-management',
+      content: (
+        <div className="flex flex-col h-full">
+          <h2 className="text-4xl font-bold mb-8 gradient-text">Risk Management</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-white/5 p-8 rounded-lg border-l-4 border-red-600">
+              <h3 className="text-2xl font-bold mb-4">Regulatory</h3>
+              <p className="text-xl">Built-in NEMSIS v3.5 validation engine</p>
+            </div>
+            <div className="bg-white/5 p-8 rounded-lg border-l-4 border-red-600">
+              <h3 className="text-2xl font-bold mb-4">Technical</h3>
+              <p className="text-xl">Layer-wise model diagnostics</p>
             </div>
           </div>
         </div>
@@ -180,7 +519,7 @@ const Investors = () => {
 
         {/* Slide Indicators */}
         <div className="absolute bottom-8 left-0 right-0">
-          <div className="flex justify-center gap-2">
+          <div className="flex justify-center gap-2 flex-wrap max-w-4xl mx-auto px-4">
             {slides.map((_, index) => (
               <button
                 key={index}
@@ -188,6 +527,7 @@ const Investors = () => {
                   index === currentSlide ? 'bg-red-600' : 'bg-zinc-600'
                 }`}
                 onClick={() => setCurrentSlide(index)}
+                aria-label={`Go to slide ${index + 1}`}
               />
             ))}
           </div>
