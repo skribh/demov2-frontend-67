@@ -562,54 +562,37 @@ const Investors = () => {
           </div>
         </div>
         
-        <div className="mb-16 bg-black/80 border-l-4 border-red-600 p-8">
-          <p className="text-xl">
-            Welcome to the Skribh investor portal. Here you'll find comprehensive information about 
-            our company, product roadmap, market opportunity, and financial projections. 
-            Select a resource below to learn more.
-          </p>
+        <div className="mb-10">
+          <button 
+            onClick={investorResources[0].action}
+            className="w-full text-left bg-black/80 border-l-4 border-red-600 rounded-none p-8 hover:bg-black/90 transition-colors"
+          >
+            <div className="flex items-center">
+              {investorResources[0].icon}
+              <div className="ml-6">
+                <h3 className="text-3xl font-bold mb-2">{investorResources[0].title}</h3>
+                <p className="text-xl text-white/80">{investorResources[0].description}</p>
+              </div>
+            </div>
+          </button>
         </div>
         
-        <div className="space-y-6">
-          <div className="flex flex-col md:flex-row gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+          {investorResources.slice(1).map((resource) => (
             <button 
-              onClick={investorResources[0].action}
-              className="text-left bg-black/80 border-l-4 border-red-600 rounded-none p-8 hover:bg-black/90 transition-colors md:w-1/2"
+              key={resource.id}
+              onClick={resource.action}
+              className="text-left bg-black/80 border-l-4 border-red-600 rounded-none p-6 hover:bg-black/90 transition-colors"
             >
-              <div className="mb-4">
-                {investorResources[0].icon}
-              </div>
-              <h3 className="text-2xl font-bold mb-2">{investorResources[0].title}</h3>
-              <p className="text-lg text-white/80">{investorResources[0].description}</p>
-            </button>
-            
-            <button 
-              onClick={investorResources[1].action}
-              className="text-left bg-black/80 border-l-4 border-red-600 rounded-none p-8 hover:bg-black/90 transition-colors md:w-1/2"
-            >
-              <div className="mb-4">
-                {investorResources[1].icon}
-              </div>
-              <h3 className="text-2xl font-bold mb-2">{investorResources[1].title}</h3>
-              <p className="text-lg text-white/80">{investorResources[1].description}</p>
-            </button>
-          </div>
-          
-          <div className="flex flex-col md:flex-row gap-6">
-            {investorResources.slice(2).map((resource) => (
-              <button 
-                key={resource.id}
-                onClick={resource.action}
-                className="text-left bg-black/80 border-l-4 border-red-600 rounded-none p-8 hover:bg-black/90 transition-colors flex-1"
-              >
-                <div className="mb-4">
-                  {resource.icon}
+              <div className="flex items-center">
+                {resource.icon}
+                <div className="ml-4">
+                  <h3 className="text-xl font-bold mb-1">{resource.title}</h3>
+                  <p className="text-lg text-white/80">{resource.description}</p>
                 </div>
-                <h3 className="text-2xl font-bold mb-2">{resource.title}</h3>
-                <p className="text-lg text-white/80">{resource.description}</p>
-              </button>
-            ))}
-          </div>
+              </div>
+            </button>
+          ))}
         </div>
       </div>
     </div>
