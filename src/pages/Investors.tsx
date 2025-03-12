@@ -567,23 +567,24 @@ const Investors = () => {
       <header className="bg-black border-b border-zinc-800 py-6">
         <div className="container mx-auto px-4">
           <div className="flex items-center">
-            <Link to="/" className="mr-6">
-              <Button variant="ghost" className="text-white hover:bg-red-600/20">
-                <ArrowLeft className="mr-2 h-5 w-5" /> Back to Home
+            {viewMode === 'landing' ? (
+              <Link to="/" className="mr-6">
+                <Button variant="ghost" className="text-white hover:bg-red-600/20">
+                  <ArrowLeft className="mr-2 h-5 w-5" /> Back to Home
+                </Button>
+              </Link>
+            ) : (
+              <Button 
+                variant="ghost" 
+                className="mr-6 text-white hover:bg-red-600/20"
+                onClick={() => setViewMode('landing')}
+              >
+                <ArrowLeft className="mr-2 h-5 w-5" /> Back to Resources
               </Button>
-            </Link>
+            )}
             <h1 className="text-3xl font-bold text-red-600">
               {viewMode === 'landing' ? 'Investor Information' : 'Investor Presentation'}
             </h1>
-            {viewMode === 'slides' && (
-              <Button 
-                variant="ghost" 
-                className="ml-auto text-white hover:bg-red-600/20"
-                onClick={() => setViewMode('landing')}
-              >
-                Back to Resources
-              </Button>
-            )}
           </div>
         </div>
       </header>
