@@ -1,11 +1,12 @@
 
-import { ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowLeft, ChevronLeft, ChevronRight, FileText, BarChart, TrendingUp, Clock, Presentation } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { Card } from '@/components/ui/card';
 
 const Investors = () => {
+  const [viewMode, setViewMode] = useState<'landing' | 'slides'>('landing');
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
@@ -480,6 +481,86 @@ const Investors = () => {
     setCurrentSlide((prev) => (prev === 0 ? prev : prev - 1));
   };
 
+  const investorResources = [
+    {
+      id: 'pitch-deck',
+      title: 'Pitch Deck',
+      description: 'Our comprehensive investor presentation',
+      icon: <Presentation className="h-12 w-12 text-red-600" />,
+      action: () => setViewMode('slides')
+    },
+    {
+      id: 'one-pager',
+      title: 'One-Pager',
+      description: 'Key information about Skribh summarized',
+      icon: <FileText className="h-12 w-12 text-red-600" />,
+      action: () => alert('One-pager would open here')
+    },
+    {
+      id: 'forecast-model',
+      title: 'Forecast Model',
+      description: 'Interactive financial projections spreadsheet',
+      icon: <BarChart className="h-12 w-12 text-red-600" />,
+      action: () => alert('Forecast model would open here')
+    },
+    {
+      id: 'revenue-model',
+      title: 'Revenue Model',
+      description: 'Detailed breakdown of our revenue streams',
+      icon: <TrendingUp className="h-12 w-12 text-red-600" />,
+      action: () => alert('Revenue model would open here')
+    },
+    {
+      id: 'timeline',
+      title: 'Product Timeline',
+      description: 'Development and investment milestones',
+      icon: <Clock className="h-12 w-12 text-red-600" />,
+      action: () => alert('Product timeline would open here')
+    }
+  ];
+
+  const renderLandingPage = () => (
+    <div className="container mx-auto px-4 py-12">
+      <div className="max-w-6xl mx-auto">
+        <div className="flex items-center justify-center mb-12">
+          <img 
+            src="/lovable-uploads/2e03f383-0ea8-4e5e-9345-164936ca73f4.png" 
+            alt="Skribh Logo" 
+            className="h-32 w-32 mr-6" 
+          />
+          <div>
+            <h1 className="text-6xl font-bold gradient-text">Skribh Auris</h1>
+            <p className="text-2xl text-white/80 italic">Investor Information Portal</p>
+          </div>
+        </div>
+        
+        <div className="mb-16 bg-black/80 border-l-4 border-red-600 p-8">
+          <p className="text-xl">
+            Welcome to the Skribh investor portal. Here you'll find comprehensive information about 
+            our company, product roadmap, market opportunity, and financial projections. 
+            Select a resource below to learn more.
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {investorResources.map((resource) => (
+            <button 
+              key={resource.id}
+              onClick={resource.action}
+              className="text-left bg-black/80 border-l-4 border-red-600 rounded-none p-8 hover:bg-black/90 transition-colors"
+            >
+              <div className="mb-4">
+                {resource.icon}
+              </div>
+              <h3 className="text-2xl font-bold mb-2">{resource.title}</h3>
+              <p className="text-lg text-white/80">{resource.description}</p>
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <div className="min-h-screen bg-black text-white font-helvetica">
       {/* Header */}
@@ -491,57 +572,72 @@ const Investors = () => {
                 <ArrowLeft className="mr-2 h-5 w-5" /> Back to Home
               </Button>
             </Link>
-            <h1 className="text-3xl font-bold text-red-600">Investor Presentation</h1>
+            <h1 className="text-3xl font-bold text-red-600">
+              {viewMode === 'landing' ? 'Investor Information' : 'Investor Presentation'}
+            </h1>
+            {viewMode === 'slides' && (
+              <Button 
+                variant="ghost" 
+                className="ml-auto text-white hover:bg-red-600/20"
+                onClick={() => setViewMode('landing')}
+              >
+                Back to Resources
+              </Button>
+            )}
           </div>
         </div>
       </header>
 
-      {/* Slide Content */}
-      <main className="container mx-auto px-4 py-12 min-h-[calc(100vh-160px)] relative">
-        <div className="max-w-6xl mx-auto h-full">
-          {slides[currentSlide].content}
-        </div>
-
-        {/* Navigation Arrows */}
-        <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 flex justify-between px-4 pointer-events-none">
-          <Button
-            variant="ghost"
-            className={`text-white rounded-none p-2 pointer-events-auto ${
-              currentSlide === 0 ? 'opacity-0' : 'opacity-100'
-            } hover:bg-red-600/20`}
-            onClick={previousSlide}
-            disabled={currentSlide === 0}
-          >
-            <ChevronLeft className="h-8 w-8" />
-          </Button>
-          <Button
-            variant="ghost"
-            className={`text-white rounded-none p-2 pointer-events-auto ${
-              currentSlide === slides.length - 1 ? 'opacity-0' : 'opacity-100'
-            } hover:bg-red-600/20`}
-            onClick={nextSlide}
-            disabled={currentSlide === slides.length - 1}
-          >
-            <ChevronRight className="h-8 w-8" />
-          </Button>
-        </div>
-
-        {/* Slide Indicators */}
-        <div className="absolute bottom-8 left-0 right-0">
-          <div className="flex justify-center gap-2 flex-wrap max-w-4xl mx-auto px-4">
-            {slides.map((_, index) => (
-              <button
-                key={index}
-                className={`w-3 h-3 rounded-none transition-colors ${
-                  index === currentSlide ? 'bg-red-600' : 'bg-zinc-600'
-                }`}
-                onClick={() => setCurrentSlide(index)}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
+      {/* Main Content */}
+      {viewMode === 'landing' ? (
+        renderLandingPage()
+      ) : (
+        <main className="container mx-auto px-4 py-12 min-h-[calc(100vh-160px)] relative">
+          <div className="max-w-6xl mx-auto h-full">
+            {slides[currentSlide].content}
           </div>
-        </div>
-      </main>
+
+          {/* Navigation Arrows */}
+          <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 flex justify-between px-4 pointer-events-none">
+            <Button
+              variant="ghost"
+              className={`text-white rounded-none p-2 pointer-events-auto ${
+                currentSlide === 0 ? 'opacity-0' : 'opacity-100'
+              } hover:bg-red-600/20`}
+              onClick={previousSlide}
+              disabled={currentSlide === 0}
+            >
+              <ChevronLeft className="h-8 w-8" />
+            </Button>
+            <Button
+              variant="ghost"
+              className={`text-white rounded-none p-2 pointer-events-auto ${
+                currentSlide === slides.length - 1 ? 'opacity-0' : 'opacity-100'
+              } hover:bg-red-600/20`}
+              onClick={nextSlide}
+              disabled={currentSlide === slides.length - 1}
+            >
+              <ChevronRight className="h-8 w-8" />
+            </Button>
+          </div>
+
+          {/* Slide Indicators */}
+          <div className="absolute bottom-8 left-0 right-0">
+            <div className="flex justify-center gap-2 flex-wrap max-w-4xl mx-auto px-4">
+              {slides.map((_, index) => (
+                <button
+                  key={index}
+                  className={`w-3 h-3 rounded-none transition-colors ${
+                    index === currentSlide ? 'bg-red-600' : 'bg-zinc-600'
+                  }`}
+                  onClick={() => setCurrentSlide(index)}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+        </main>
+      )}
     </div>
   );
 };
