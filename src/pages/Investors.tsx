@@ -20,7 +20,7 @@ const Investors = () => {
               className="h-32 w-32" 
             />
           </div>
-          <h2 className="text-6xl font-bold mb-8 gradient-text">Skribh Auris</h2>
+          <h2 className="text-6xl font-bold mb-8 gradient-text">Skribh</h2>
           <p className="text-2xl text-center mb-8 max-w-3xl italic">
             Automated, HIPAA-compliant medical documentation via ambient AI transcription
           </p>
@@ -514,35 +514,35 @@ const Investors = () => {
       id: 'pitch-deck',
       title: 'Pitch Deck',
       description: 'Our comprehensive investor presentation',
-      icon: <Presentation className="h-12 w-12 text-red-600" />,
+      icon: <Presentation className="h-8 w-8 text-red-600" />,
       action: () => setViewMode('slides')
     },
     {
       id: 'one-pager',
       title: 'One-Pager',
       description: 'Key information about Skribh summarized',
-      icon: <FileText className="h-12 w-12 text-red-600" />,
+      icon: <FileText className="h-8 w-8 text-red-600" />,
       action: () => alert('One-pager would open here')
     },
     {
       id: 'forecast-model',
       title: 'Forecast Model',
       description: 'Interactive financial projections spreadsheet',
-      icon: <BarChart className="h-12 w-12 text-red-600" />,
+      icon: <BarChart className="h-8 w-8 text-red-600" />,
       action: () => alert('Forecast model would open here')
     },
     {
       id: 'revenue-model',
       title: 'Revenue Model',
       description: 'Detailed breakdown of our revenue streams',
-      icon: <TrendingUp className="h-12 w-12 text-red-600" />,
+      icon: <TrendingUp className="h-8 w-8 text-red-600" />,
       action: () => alert('Revenue model would open here')
     },
     {
       id: 'timeline',
       title: 'Product Timeline',
       description: 'Development and investment milestones',
-      icon: <Clock className="h-12 w-12 text-red-600" />,
+      icon: <Clock className="h-8 w-8 text-red-600" />,
       action: () => alert('Product timeline would open here')
     }
   ];
@@ -557,38 +557,22 @@ const Investors = () => {
             className="h-48 w-48 mr-6" 
           />
           <div>
-            <h1 className="text-6xl font-bold gradient-text">Skribh Auris</h1>
-            <p className="text-2xl text-white/80 italic">Investor Information Portal</p>
+            <h1 className="text-6xl font-bold gradient-text">Skribh</h1>
           </div>
         </div>
         
-        <div className="flex justify-center mb-10">
-          <button 
-            onClick={investorResources[0].action}
-            className="text-left bg-black/80 border-l-4 border-red-600 rounded-none p-8 hover:bg-black/90 transition-colors max-w-3xl w-full"
-          >
-            <div className="flex items-center justify-center">
-              {investorResources[0].icon}
-              <div className="ml-6">
-                <h3 className="text-4xl font-bold mb-2">{investorResources[0].title}</h3>
-                <p className="text-xl text-white/80">{investorResources[0].description}</p>
-              </div>
-            </div>
-          </button>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          {investorResources.slice(1).map((resource) => (
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-8">
+          {investorResources.map((resource) => (
             <button 
               key={resource.id}
               onClick={resource.action}
-              className="text-left bg-black/80 border-l-4 border-red-600 rounded-none p-4 hover:bg-black/90 transition-colors"
+              className="text-left bg-black/80 border-l-4 border-red-600 rounded-none p-4 hover:bg-black/90 transition-colors h-full"
             >
-              <div className="flex flex-col items-center text-center">
+              <div className="flex flex-col items-center text-center h-full">
                 <div className="mb-3">
                   {resource.icon}
                 </div>
-                <h3 className="text-lg font-bold mb-1">{resource.title}</h3>
+                <h3 className="text-lg font-bold mb-2">{resource.title}</h3>
                 <p className="text-sm text-white/80">{resource.description}</p>
               </div>
             </button>
