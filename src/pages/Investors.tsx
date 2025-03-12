@@ -1,4 +1,3 @@
-
 import { ArrowLeft, ChevronLeft, ChevronRight, FileText, BarChart, TrendingUp, Clock, Presentation } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -44,6 +43,13 @@ const Investors = () => {
       id: 'problem',
       content: (
         <div className="flex flex-col h-full">
+          <div className="flex justify-end mb-6">
+            <img 
+              src="/lovable-uploads/2e03f383-0ea8-4e5e-9345-164936ca73f4.png" 
+              alt="Skribh Logo" 
+              className="h-16 w-16" 
+            />
+          </div>
           <h2 className="text-4xl font-bold mb-8 text-red-600">Documentation Burden Crippling EMS Efficiency</h2>
           <div className="space-y-6">
             <div className="bg-black/80 border-l-4 border-red-600 p-6">
@@ -473,6 +479,28 @@ const Investors = () => {
     }
   ];
 
+  for (let i = 2; i < slides.length; i++) {
+    const slide = slides[i];
+    const originalContent = slide.content;
+    
+    if (!originalContent.props.children.some(child => 
+      child?.props?.children?.props?.src === "/lovable-uploads/2e03f383-0ea8-4e5e-9345-164936ca73f4.png")) {
+      
+      slide.content = (
+        <div className="flex flex-col h-full">
+          <div className="flex justify-end mb-6">
+            <img 
+              src="/lovable-uploads/2e03f383-0ea8-4e5e-9345-164936ca73f4.png" 
+              alt="Skribh Logo" 
+              className="h-16 w-16" 
+            />
+          </div>
+          {originalContent.props.children}
+        </div>
+      );
+    }
+  }
+
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev === slides.length - 1 ? prev : prev + 1));
   };
@@ -526,7 +554,7 @@ const Investors = () => {
           <img 
             src="/lovable-uploads/2e03f383-0ea8-4e5e-9345-164936ca73f4.png" 
             alt="Skribh Logo" 
-            className="h-32 w-32 mr-6" 
+            className="h-48 w-48 mr-6" 
           />
           <div>
             <h1 className="text-6xl font-bold gradient-text">Skribh Auris</h1>
@@ -542,20 +570,46 @@ const Investors = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {investorResources.map((resource) => (
+        <div className="space-y-6">
+          <div className="flex flex-col md:flex-row gap-6">
             <button 
-              key={resource.id}
-              onClick={resource.action}
-              className="text-left bg-black/80 border-l-4 border-red-600 rounded-none p-8 hover:bg-black/90 transition-colors"
+              onClick={investorResources[0].action}
+              className="text-left bg-black/80 border-l-4 border-red-600 rounded-none p-8 hover:bg-black/90 transition-colors md:w-1/2"
             >
               <div className="mb-4">
-                {resource.icon}
+                {investorResources[0].icon}
               </div>
-              <h3 className="text-2xl font-bold mb-2">{resource.title}</h3>
-              <p className="text-lg text-white/80">{resource.description}</p>
+              <h3 className="text-2xl font-bold mb-2">{investorResources[0].title}</h3>
+              <p className="text-lg text-white/80">{investorResources[0].description}</p>
             </button>
-          ))}
+            
+            <button 
+              onClick={investorResources[1].action}
+              className="text-left bg-black/80 border-l-4 border-red-600 rounded-none p-8 hover:bg-black/90 transition-colors md:w-1/2"
+            >
+              <div className="mb-4">
+                {investorResources[1].icon}
+              </div>
+              <h3 className="text-2xl font-bold mb-2">{investorResources[1].title}</h3>
+              <p className="text-lg text-white/80">{investorResources[1].description}</p>
+            </button>
+          </div>
+          
+          <div className="flex flex-col md:flex-row gap-6">
+            {investorResources.slice(2).map((resource) => (
+              <button 
+                key={resource.id}
+                onClick={resource.action}
+                className="text-left bg-black/80 border-l-4 border-red-600 rounded-none p-8 hover:bg-black/90 transition-colors flex-1"
+              >
+                <div className="mb-4">
+                  {resource.icon}
+                </div>
+                <h3 className="text-2xl font-bold mb-2">{resource.title}</h3>
+                <p className="text-lg text-white/80">{resource.description}</p>
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </div>
