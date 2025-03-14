@@ -1,4 +1,3 @@
-
 import { ArrowLeft, ChevronLeft, ChevronRight, FileText, BarChart, TrendingUp, Clock, Presentation, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -489,33 +488,56 @@ const Investors = () => {
     }
   ];
 
-  for (let i = 2; i < slides.length; i++) {
-    const slide = slides[i];
-    const originalContent = slide.content;
-    
-    if (!originalContent.props.children.some(child => 
-      child?.props?.children?.props?.src === "/lovable-uploads/2e03f383-0ea8-4e5e-9345-164936ca73f4.png")) {
-      
+  // Add contact button to all slides
+  slides.forEach((slide, index) => {
+    // Skip the first slide as it has a different layout
+    if (index === 0) {
+      // Add contact button to first slide
+      const originalContent = slide.content;
       slide.content = (
-        <div className="flex flex-col h-full">
-          <div className="flex justify-between mb-6">
-            <img 
-              src="/lovable-uploads/2e03f383-0ea8-4e5e-9345-164936ca73f4.png" 
-              alt="Skribh Logo" 
-              className="h-16 w-16" 
-            />
+        <div className="relative flex flex-col items-center justify-center h-full">
+          <div className="absolute top-4 right-4">
             <Button
               onClick={handleContactClick}
               className="skribh-button"
             >
-              Contact Us <Mail className="ml-2 h-4 w-4" />
+              Contact Our Investment Team <Mail className="ml-2 h-4 w-4" />
             </Button>
           </div>
           {originalContent.props.children}
         </div>
       );
+    } else if (index > 1) {
+      // For slides after index 1, which may already have the logo and button at the top
+      const originalContent = slide.content;
+      
+      // Make sure we don't add the button twice
+      if (!originalContent.props.children.some(child => 
+        child?.props?.children?.props?.className?.includes("skribh-button"))) {
+        
+        // Replace the existing header with a new one containing both logo and contact button
+        // We assume only slides after index 1 may have this header structure
+        slide.content = (
+          <div className="flex flex-col h-full">
+            <div className="flex justify-between mb-6">
+              <img 
+                src="/lovable-uploads/2e03f383-0ea8-4e5e-9345-164936ca73f4.png" 
+                alt="Skribh Logo" 
+                className="h-16 w-16" 
+              />
+              <Button
+                onClick={handleContactClick}
+                className="skribh-button"
+              >
+                Contact Our Investment Team <Mail className="ml-2 h-4 w-4" />
+              </Button>
+            </div>
+            {originalContent.props.children.slice(2)} {/* Skip the header if it exists */}
+          </div>
+        );
+      }
     }
-  }
+  });
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev === slides.length - 1 ? prev : prev + 1));
@@ -657,48 +679,4 @@ const Investors = () => {
           </div>
 
           {/* Navigation Arrows */}
-          <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 flex justify-between px-4 pointer-events-none">
-            <Button
-              variant="ghost"
-              className={`text-white rounded-none p-2 pointer-events-auto ${
-                currentSlide === 0 ? 'opacity-0' : 'opacity-100'
-              } hover:bg-red-600/20`}
-              onClick={previousSlide}
-              disabled={currentSlide === 0}
-            >
-              <ChevronLeft className="h-8 w-8" />
-            </Button>
-            <Button
-              variant="ghost"
-              className={`text-white rounded-none p-2 pointer-events-auto ${
-                currentSlide === slides.length - 1 ? 'opacity-0' : 'opacity-100'
-              } hover:bg-red-600/20`}
-              onClick={nextSlide}
-              disabled={currentSlide === slides.length - 1}
-            >
-              <ChevronRight className="h-8 w-8" />
-            </Button>
-          </div>
-
-          {/* Slide Indicators */}
-          <div className="absolute bottom-8 left-0 right-0">
-            <div className="flex justify-center gap-2 flex-wrap max-w-4xl mx-auto px-4">
-              {slides.map((_, index) => (
-                <button
-                  key={index}
-                  className={`w-3 h-3 rounded-none transition-colors ${
-                    index === currentSlide ? 'bg-red-600' : 'bg-zinc-600'
-                  }`}
-                  onClick={() => setCurrentSlide(index)}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
-            </div>
-          </div>
-        </main>
-      )}
-    </div>
-  );
-};
-
-export default Investors;
+          <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 flex justify-between px-4 pointer-
