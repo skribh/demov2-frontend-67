@@ -1,3 +1,4 @@
+
 import { ArrowLeft, ChevronLeft, ChevronRight, FileText, BarChart, TrendingUp, Clock, Presentation, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
@@ -679,4 +680,35 @@ const Investors = () => {
           </div>
 
           {/* Navigation Arrows */}
-          <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 flex justify-between px-4 pointer-
+          <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 flex justify-between px-4 pointer-events-none">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={previousSlide}
+              disabled={currentSlide === 0}
+              className="bg-black/50 text-white hover:bg-black/70 pointer-events-auto"
+            >
+              <ChevronLeft className="h-8 w-8" />
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={nextSlide}
+              disabled={currentSlide === slides.length - 1}
+              className="bg-black/50 text-white hover:bg-black/70 pointer-events-auto"
+            >
+              <ChevronRight className="h-8 w-8" />
+            </Button>
+          </div>
+          
+          {/* Slide Counter */}
+          <div className="absolute bottom-4 right-4 bg-black/50 px-3 py-1 rounded-md text-sm">
+            {currentSlide + 1} / {slides.length}
+          </div>
+        </main>
+      )}
+    </div>
+  );
+};
+
+export default Investors;
