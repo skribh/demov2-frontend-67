@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
@@ -85,67 +86,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* NEMSIS Badges Section */}
-      <section className="py-12 bg-black border-b border-zinc-800">
-        <div className="skribh-container">
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-            <img 
-              src="/lovable-uploads/c51a6999-8d2e-4b58-83e8-c6818fa731b3.png" 
-              alt="NEMSIS v3.5.0 Receive & Process Compliant" 
-              className="h-20 object-contain" 
-            />
-            <img 
-              src="/lovable-uploads/bbcff65e-594c-4f28-bd7a-e3ca27ef9ed1.png" 
-              alt="NEMSIS v3.4.0 Collect Data Compliant" 
-              className="h-20 object-contain" 
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Software Integration Section */}
-      <section className="py-20 bg-black border-b border-zinc-800">
-        <div className="skribh-container">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">Integrates Seamlessly With Leading ePCRs</h2>
-          <div className="skribh-grid items-center">
-            <div className="col-span-12 md:col-span-3 p-8 flex flex-col items-center">
-              <img 
-                src="/lovable-uploads/c2102a71-4e1c-4450-843e-227b6aa25c53.png" 
-                alt="ImageTrend Elite Logo" 
-                className="h-16 object-contain mb-4" 
-              />
-              <h3 className="text-xl font-bold text-center">ImageTrend Elite</h3>
-              <p className="text-center text-zinc-400">Complete ePCR and analytics solution</p>
-            </div>
-            <div className="col-span-12 md:col-span-3 p-8 flex flex-col items-center">
-              <img 
-                src="/lovable-uploads/f9d475b6-1e42-4bbd-8a9d-1e6a4fbf9669.png" 
-                alt="ESO Logo" 
-                className="h-16 object-contain mb-4 bg-white p-2 rounded" 
-              />
-              <h3 className="text-xl font-bold text-center">ESO</h3>
-              <p className="text-center text-zinc-400">Leading EMS data and analytics platform</p>
-            </div>
-            <div className="col-span-12 md:col-span-3 p-8 flex flex-col items-center">
-              <img 
-                src="/lovable-uploads/68707274-ee5e-4c3c-87dc-2963d58fdaa6.png" 
-                alt="HealthEMS by Sansio" 
-                className="h-16 object-contain mb-4 bg-white p-2 rounded" 
-              />
-              <h3 className="text-xl font-bold text-center">HealthEMS</h3>
-              <p className="text-center text-zinc-400">Comprehensive ePCR system by Sansio</p>
-            </div>
-            <div className="col-span-12 md:col-span-3 p-8 flex flex-col items-center">
-              <div className="h-16 flex items-center justify-center mb-4">
-                <span className="text-2xl font-bold text-red-600">Stryker</span>
-              </div>
-              <h3 className="text-xl font-bold text-center">Stryker</h3>
-              <p className="text-center text-zinc-400">Industry-leading medical equipment and software</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* EMS Directors Section with Ambulance Image */}
       <section className="py-20 bg-black border-b border-zinc-800">
         <div className="skribh-container">
@@ -156,13 +96,6 @@ const Index = () => {
                 <p className="text-xl mb-8 text-zinc-300">
                   Access unprecedented insights from your field operations while maintaining the highest standards of data privacy and security. Our AI works where you do - in the field, documenting patient care in real-time.
                 </p>
-                <div className="mt-8">
-                  <RouterLink to="/ems-directors">
-                    <Button className="skribh-button">
-                      EMS Director Solutions <ArrowRight className="ml-2 h-5 w-5" />
-                    </Button>
-                  </RouterLink>
-                </div>
               </div>
             </div>
             <div className="col-span-12 md:col-span-6 mt-12 md:mt-0 flex justify-center">
@@ -187,23 +120,10 @@ const Index = () => {
                   </li>
                 </ul>
                 
-                <div className="mt-8 flex flex-wrap gap-4 justify-center">
-                  <img 
-                    src="/lovable-uploads/c51a6999-8d2e-4b58-83e8-c6818fa731b3.png" 
-                    alt="NEMSIS v3.5.0 Receive & Process Compliant" 
-                    className="h-16 object-contain" 
-                  />
-                  <img 
-                    src="/lovable-uploads/bbcff65e-594c-4f28-bd7a-e3ca27ef9ed1.png" 
-                    alt="NEMSIS v3.4.0 Collect Data Compliant" 
-                    className="h-16 object-contain" 
-                  />
-                </div>
-                
                 <div className="mt-8">
-                  <a href="tel:+18005555555" className="phone-button">
-                    <Phone className="h-5 w-5" /> Call Us Today
-                  </a>
+                  <Button className="phone-button">
+                    <Phone className="h-5 w-5" /> Contact Us Today
+                  </Button>
                 </div>
               </div>
             </div>
@@ -276,14 +196,6 @@ const Index = () => {
               <p className="text-xl mb-8 text-zinc-300">
                 Through iterative fine-tuning, Skribh constantly improves its understanding of medical terminology and protocols.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <Button variant="outline" className="skribh-button-outline">
-                  Read Technical Whitepaper <FileText className="ml-2 h-5 w-5" />
-                </Button>
-                <Button variant="outline" className="skribh-button-outline">
-                  Read Accuracy Whitepaper <BarChart className="ml-2 h-5 w-5" />
-                </Button>
-              </div>
             </div>
             <div className="col-span-12 md:col-span-6 mt-12 md:mt-0">
               <div className="bg-black p-8 border-l-4 border-red-600">
@@ -294,53 +206,6 @@ const Index = () => {
                 <Button className="skribh-button">
                   Request a Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-20 bg-black border-t border-zinc-800">
-        <div className="skribh-container">
-          <h2 className="text-4xl font-bold mb-12 text-center">What Customers Are Saying</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="testimonial-card">
-              <div className="flex justify-center mb-6">
-                <img src="/lovable-uploads/a41c1049-9f0b-499a-bf85-4debfe508b1d.png" alt="EMS Logo" className="h-16 w-16" />
-              </div>
-              <p className="text-center mb-6 text-zinc-300">
-                "The training was very helpful and informative. I really liked how hands-on it was during each session. We learned a lot to help us succeed with Skribh."
-              </p>
-              <div className="text-center">
-                <p className="font-bold">Jessica Rodriguez</p>
-                <p className="text-zinc-400 text-sm">EMS Specialist, Golden Valley EMS</p>
-              </div>
-            </div>
-            
-            <div className="testimonial-card">
-              <div className="flex justify-center mb-6">
-                <img src="/lovable-uploads/05fb8946-1d85-4e07-9d6b-ca9cb8c4d5d5.png" alt="Hospital Logo" className="h-16 w-16" />
-              </div>
-              <p className="text-center mb-6 text-zinc-300">
-                "The amount of time Skribh is saving me from what I used to do is incredible. I'm able to focus on other things the department needs instead of admin work."
-              </p>
-              <div className="text-center">
-                <p className="font-bold">Michael Chen</p>
-                <p className="text-zinc-400 text-sm">Operations Director, Metro Hospital EMS</p>
-              </div>
-            </div>
-            
-            <div className="testimonial-card">
-              <div className="flex justify-center mb-6">
-                <img src="/lovable-uploads/eeaa2efb-e5e7-4a48-a3c1-5ebe7d80cc6f.png" alt="Fire Department Logo" className="h-16 w-16" />
-              </div>
-              <p className="text-center mb-6 text-zinc-300">
-                "Skribh is excellent at determining where we need to focus and how we can improve. I love that they're always pushing the boundaries to make the system better."
-              </p>
-              <div className="text-center">
-                <p className="font-bold">Sarah Thompson</p>
-                <p className="text-zinc-400 text-sm">Battalion Chief, Lakeside Fire & Rescue</p>
               </div>
             </div>
           </div>

@@ -1,12 +1,22 @@
-import { ArrowLeft, ChevronLeft, ChevronRight, FileText, BarChart, TrendingUp, Clock, Presentation } from 'lucide-react';
+
+import { ArrowLeft, ChevronLeft, ChevronRight, FileText, BarChart, TrendingUp, Clock, Presentation, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { Card } from '@/components/ui/card';
+import { useToast } from '@/components/ui/use-toast';
 
 const Investors = () => {
+  const { toast } = useToast();
   const [viewMode, setViewMode] = useState<'landing' | 'slides'>('landing');
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  const handleContactClick = () => {
+    toast({
+      title: "Contact Request Received",
+      description: "Our investment team will reach out to you shortly.",
+    });
+  };
 
   const slides = [
     {
@@ -488,12 +498,18 @@ const Investors = () => {
       
       slide.content = (
         <div className="flex flex-col h-full">
-          <div className="flex justify-end mb-6">
+          <div className="flex justify-between mb-6">
             <img 
               src="/lovable-uploads/2e03f383-0ea8-4e5e-9345-164936ca73f4.png" 
               alt="Skribh Logo" 
               className="h-16 w-16" 
             />
+            <Button
+              onClick={handleContactClick}
+              className="skribh-button"
+            >
+              Contact Us <Mail className="ml-2 h-4 w-4" />
+            </Button>
           </div>
           {originalContent.props.children}
         </div>
@@ -515,35 +531,40 @@ const Investors = () => {
       title: 'Pitch Deck',
       description: 'Our comprehensive investor presentation',
       icon: <Presentation className="h-8 w-8 text-red-600" />,
-      action: () => setViewMode('slides')
+      action: () => setViewMode('slides'),
+      comingSoon: false
     },
     {
       id: 'one-pager',
       title: 'One-Pager',
       description: 'Key information about Skribh summarized',
       icon: <FileText className="h-8 w-8 text-red-600" />,
-      action: () => alert('One-pager would open here')
+      action: () => alert('One-pager would open here'),
+      comingSoon: false
     },
     {
       id: 'forecast-model',
       title: 'Forecast Model',
       description: 'Interactive financial projections spreadsheet',
       icon: <BarChart className="h-8 w-8 text-red-600" />,
-      action: () => alert('Forecast model would open here')
+      action: () => handleContactClick(),
+      comingSoon: true
     },
     {
       id: 'revenue-model',
       title: 'Revenue Model',
       description: 'Detailed breakdown of our revenue streams',
       icon: <TrendingUp className="h-8 w-8 text-red-600" />,
-      action: () => alert('Revenue model would open here')
+      action: () => handleContactClick(),
+      comingSoon: true
     },
     {
       id: 'timeline',
       title: 'Product Timeline',
       description: 'Development and investment milestones',
       icon: <Clock className="h-8 w-8 text-red-600" />,
-      action: () => alert('Product timeline would open here')
+      action: () => handleContactClick(),
+      comingSoon: true
     }
   ];
 
@@ -561,12 +582,22 @@ const Investors = () => {
           </div>
         </div>
         
+        <div className="flex justify-center mb-8">
+          <Button 
+            onClick={handleContactClick}
+            className="skribh-button text-xl"
+            size="lg"
+          >
+            Contact Our Investment Team <Mail className="ml-2 h-5 w-5" />
+          </Button>
+        </div>
+        
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-8">
           {investorResources.map((resource) => (
             <button 
               key={resource.id}
               onClick={resource.action}
-              className="text-left bg-black/80 border-l-4 border-red-600 rounded-none p-4 hover:bg-black/90 transition-colors h-full"
+              className="text-left bg-black/80 border-l-4 border-red-600 rounded-none p-4 hover:bg-black/90 transition-colors h-full relative"
             >
               <div className="flex flex-col items-center text-center h-full">
                 <div className="mb-3">
@@ -574,6 +605,12 @@ const Investors = () => {
                 </div>
                 <h3 className="text-lg font-bold mb-2">{resource.title}</h3>
                 <p className="text-sm text-white/80">{resource.description}</p>
+                
+                {resource.comingSoon && (
+                  <div className="absolute top-0 right-0 bg-red-600 text-white text-xs font-bold py-1 px-2 transform rotate-0">
+                    COMING SOON
+                  </div>
+                )}
               </div>
             </button>
           ))}
