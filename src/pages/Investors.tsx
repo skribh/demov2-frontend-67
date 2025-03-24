@@ -1,7 +1,7 @@
 
 import { ArrowLeft, ChevronLeft, ChevronRight, FileText, BarChart, TrendingUp, Clock, Presentation, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { useToast } from '@/components/ui/use-toast';
@@ -11,11 +11,12 @@ const Investors = () => {
   const [viewMode, setViewMode] = useState<'landing' | 'slides'>('landing');
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  const navigate = useNavigate();
+
   const handleContactClick = () => {
-    toast({
-      title: "Contact Request Received",
-      description: "Our investment team will reach out to you shortly.",
-    });
+    
+      navigate("/#contact", { replace: false }); // Ensure a new entry in history
+  
   };
 
   const slides = [
@@ -53,13 +54,6 @@ const Investors = () => {
       id: 'problem',
       content: (
         <div className="flex flex-col h-full">
-          <div className="flex justify-end mb-6">
-            <img 
-              src="/lovable-uploads/2e03f383-0ea8-4e5e-9345-164936ca73f4.png" 
-              alt="Skribh Logo" 
-              className="h-16 w-16" 
-            />
-          </div>
           <h2 className="text-4xl font-bold mb-8 text-red-600">Documentation Burden Crippling EMS Efficiency</h2>
           <div className="space-y-6">
             <div className="bg-black/80 border-l-4 border-red-600 p-6">
@@ -474,9 +468,11 @@ const Investors = () => {
             For detailed financial information, pitch deck, and to schedule a meeting with our founders,
             please contact our investment relations team.
           </p>
+          <Link to="/#contact">
           <Button size="lg" className="skribh-button text-xl">
             Request Investor Package
           </Button>
+          </Link>
           <div className="mt-8 flex justify-center">
             <img 
               src="/lovable-uploads/2e03f383-0ea8-4e5e-9345-164936ca73f4.png" 
@@ -496,20 +492,23 @@ const Investors = () => {
       // Add contact button to first slide
       const originalContent = slide.content;
       slide.content = (
-        <div className="relative flex flex-col items-center justify-center h-full">
-          <div className="absolute top-4 right-4">
+        <div className="flex flex-col items-center justify-center h-full">
+          <div className="flex w-full md:justify-end justify-center mb-8">
+            <Link to="/#contact">
             <Button
-              onClick={handleContactClick}
+              type="button"
               className="skribh-button"
             >
               Contact Our Investment Team <Mail className="ml-2 h-4 w-4" />
             </Button>
+            </Link>
+            
           </div>
           {originalContent.props.children}
         </div>
       );
-    } else if (index > 1) {
-      // For slides after index 1, which may already have the logo and button at the top
+    } else if (index >= 1 && index < slides.length - 1) {
+      // For slides after index 1, which may already have the logo and button at the top, and excluding the final contact slide, which already has a button
       const originalContent = slide.content;
       
       // Make sure we don't add the button twice
@@ -520,20 +519,22 @@ const Investors = () => {
         // We assume only slides after index 1 may have this header structure
         slide.content = (
           <div className="flex flex-col h-full">
-            <div className="flex justify-between mb-6">
+            <div className="flex justify-between mb-6 items-center">
               <img 
                 src="/lovable-uploads/2e03f383-0ea8-4e5e-9345-164936ca73f4.png" 
                 alt="Skribh Logo" 
                 className="h-16 w-16" 
               />
+              <Link to="/#contact">
               <Button
-                onClick={handleContactClick}
+                type="button"
                 className="skribh-button"
               >
                 Contact Our Investment Team <Mail className="ml-2 h-4 w-4" />
               </Button>
+              </Link>
             </div>
-            {originalContent.props.children.slice(2)} {/* Skip the header if it exists */}
+            {originalContent.props.children}
           </div>
         );
       }
@@ -606,13 +607,15 @@ const Investors = () => {
         </div>
         
         <div className="flex justify-center mb-8">
+          <Link to="/#contact">
           <Button 
-            onClick={handleContactClick}
+            type="button"
             className="skribh-button text-xl"
             size="lg"
           >
             Contact Our Investment Team <Mail className="ml-2 h-5 w-5" />
           </Button>
+          </Link>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-8">
