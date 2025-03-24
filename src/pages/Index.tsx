@@ -67,12 +67,16 @@ const Index = () => {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="flex flex-col sm:flex-row gap-4"
               >
-                <Button className="skribh-button">
+                <RouterLink to="/#contact" className="flex items-center justify-center">
+                <Button className="skribh-button w-full">
                   Schedule a Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-                <Button className="skribh-button-outline">
-                  Explore the Platform <ArrowRight className="ml-2 h-5 w-5" />
+                </RouterLink>
+                <RouterLink to="/investors" className="flex items-center justify-center">
+                <Button className="skribh-button-outline w-full">
+                Investor Information <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
+                </RouterLink>
               </motion.div>
             </div>
             <div className="col-span-12 md:col-span-6 mt-12 md:mt-0 flex items-center justify-center">
@@ -121,9 +125,12 @@ const Index = () => {
                 </ul>
                 
                 <div className="mt-8">
+                  <RouterLink to="/#contact">
                   <Button className="phone-button">
-                    <Phone className="h-5 w-5" /> Contact Us Today
+                    Contact Us Today
                   </Button>
+                  </RouterLink>
+                 
                 </div>
               </div>
             </div>
@@ -203,9 +210,11 @@ const Index = () => {
                 <p className="mb-6 text-zinc-300">
                   Connect every critical data point across your EMS systems for better patient outcomes and streamlined operations.
                 </p>
-                <Button className="skribh-button">
-                  Request a Demo <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
+                <RouterLink to="/#contact">
+                  <Button className="skribh-button">
+                    Request a Demo <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </RouterLink>
               </div>
             </div>
           </div>
@@ -213,7 +222,7 @@ const Index = () => {
       </section>
 
       {/* Contact and Get Started Section */}
-      <section className="py-20 bg-black border-t border-zinc-800">
+      <section id="contact" className="py-20 bg-black border-t border-zinc-800">
         <div className="skribh-container">
           <div className="skribh-grid">
             <div className="col-span-12 md:col-span-5">
