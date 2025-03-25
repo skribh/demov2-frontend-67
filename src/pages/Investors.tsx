@@ -142,7 +142,7 @@ const Investors = () => {
               <p className="text-lg opacity-80">(RAG-enhanced coding)</p>
             </div>
           </div>
-          <div className="bg-red-600 p-4 inline-block">
+          <div className="border-red-600 border-4 p-4 inline-block">
             <p className="text-xl font-bold">Output: Audit-ready reports in &lt;5 mins</p>
           </div>
         </div>
