@@ -25,17 +25,36 @@ import { Link as RouterLink } from 'react-router-dom';
 
 const Index = () => {
   const { toast } = useToast();
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [honeypot, setHoneypot] = useState('');
 
   const handleContact = (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (honeypot) {
+      return;
+    };
+
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('message', message);
+
+    fetch('https://script.google.com/macros/s/AKfycbwl4E650L9w9q_8csmIZiTLlbxSpeY89wSF9lu58tVYLqh9gLfCaDwKSmAcFETMiMqIug/exec', {
+      method: 'POST',
+      body: formData
+    });
+
     toast({
       title: "Message Sent",
       description: "We'll get back to you as soon as possible.",
     });
     setEmail('');
     setMessage('');
+    setName('');
+    setHoneypot('');
   };
 
   return (
@@ -67,12 +86,16 @@ const Index = () => {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="flex flex-col sm:flex-row gap-4"
               >
-                <Button className="skribh-button">
+                <RouterLink to="/#contact" className="flex items-center justify-center">
+                <Button className="skribh-button w-full">
                   Schedule a Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-                <Button className="skribh-button-outline">
-                  Explore the Platform <ArrowRight className="ml-2 h-5 w-5" />
+                </RouterLink>
+                <RouterLink to="/investors" className="flex items-center justify-center">
+                <Button className="skribh-button-outline w-full">
+                Investor Information <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
+                </RouterLink>
               </motion.div>
             </div>
             <div className="col-span-12 md:col-span-6 mt-12 md:mt-0 flex items-center justify-center">
@@ -121,9 +144,12 @@ const Index = () => {
                 </ul>
                 
                 <div className="mt-8">
+                  <RouterLink to="/#contact">
                   <Button className="phone-button">
-                    <Phone className="h-5 w-5" /> Contact Us Today
+                    Contact Us Today
                   </Button>
+                  </RouterLink>
+                 
                 </div>
               </div>
             </div>
@@ -203,9 +229,11 @@ const Index = () => {
                 <p className="mb-6 text-zinc-300">
                   Connect every critical data point across your EMS systems for better patient outcomes and streamlined operations.
                 </p>
-                <Button className="skribh-button">
-                  Request a Demo <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
+                <RouterLink to="/#contact">
+                  <Button className="skribh-button">
+                    Request a Demo <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </RouterLink>
               </div>
             </div>
           </div>
@@ -213,7 +241,7 @@ const Index = () => {
       </section>
 
       {/* Contact and Get Started Section */}
-      <section className="py-20 bg-black border-t border-zinc-800">
+      <section id="contact" className="py-20 bg-black border-t border-zinc-800">
         <div className="skribh-container">
           <div className="skribh-grid">
             <div className="col-span-12 md:col-span-5">
@@ -233,7 +261,21 @@ const Index = () => {
               <form onSubmit={handleContact} className="space-y-6">
                 <div>
                   <Input
+                    id="name"
+                    type="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required
+                    className="h-14 border-2 border-red-600 rounded-none bg-black text-white"
+                  />
+                </div>
+                <div>
+                  <Input
+                    id="email"
                     type="email"
+                    name="email"
                     placeholder="Enter your email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -243,13 +285,22 @@ const Index = () => {
                 </div>
                 <div>
                   <Textarea
+                    id="message"
                     placeholder="Your message"
+                    name="message"
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     required
                     className="border-2 border-red-600 rounded-none min-h-[150px] bg-black text-white"
                   />
                 </div>
+                  <input
+                    id="honeypot"
+                    name="honeypot"
+                    className="hidden"
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                  />
                 <Button type="submit" className="skribh-button w-full">
                   Send Message <Mail className="ml-2 h-5 w-5" />
                 </Button>
