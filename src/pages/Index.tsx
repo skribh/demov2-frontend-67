@@ -55,7 +55,19 @@ const Index = () => {
     setMessage('');
     setName('');
     setHoneypot('');
+
+    downloadPdf();
   };
+
+  const downloadPdf = () => {
+    const element = document.createElement("a");
+    element.href = "jess-pitch-deck.pdf";
+    element.download = "Investors.pdf";
+
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+  }
 
   return (
     <div className="min-h-screen bg-black text-white">
