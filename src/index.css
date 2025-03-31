@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -7,26 +6,39 @@
 
 @layer base {
   :root {
-    --background: 0 0% 0%; /* Black background */
-    --foreground: 0 0% 98%; /* White text */
-    --card: 0 0% 0%;
+    /* Base colors from Skribh palette */
+    --background: 217 85% 16%; /* skribh-navy */
+    --foreground: 0 0% 98%; /* skribh-cloudwhite */
+
+    /* Card and Popover */
+    --card: 217 85% 16%;
     --card-foreground: 0 0% 98%;
-    --popover: 0 0% 0%;
+    --popover: 217 85% 16%;
     --popover-foreground: 0 0% 98%;
-    --primary: 0 84% 50%; /* Vibrant red */
-    --primary-foreground: 0 0% 98%; 
-    --secondary: 0 0% 15%; /* Dark gray for secondary elements */
+
+    /* Primary colors */
+    --primary: 227 84% 60%; /* skribh-blueprint */
+    --primary-foreground: 0 0% 98%;
+
+    /* Secondary colors */
+    --secondary: 0 0% 13%; /* skribh-darkgray */
     --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 10%;
-    --muted-foreground: 0 0% 70%;
-    --accent: 0 84% 50%; /* Red accent */
+
+    /* Muted and Accent */
+    --muted: 228 78% 92%; /* skribh-gray */
+    --muted-foreground: 217 85% 16%;
+    --accent: 227 84% 60%; /* skribh-blueprint */
     --accent-foreground: 0 0% 98%;
-    --destructive: 0 84% 50%;
+
+    /* System colors */
+    --destructive: 227 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 10%;
-    --input: 0 0% 10%;
-    --ring: 0 84% 50%;
-    --radius: 0; /* Sharp corners */
+    --border: 0 0% 13%; /* skribh-darkgray */
+    --input: 0 0% 13%; /* skribh-darkgray */
+    --ring: 227 84% 60%; /* skribh-blueprint */
+
+    /* Border radius */
+    --radius: 0;
   }
 }
 
@@ -35,10 +47,15 @@
     @apply border-border antialiased;
   }
   body {
-    @apply bg-background text-foreground font-helvetica;
+    @apply bg-background text-skribh-navy font-helvetica;
   }
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-helvetica font-bold tracking-tight;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-helvetica text-skribh-navy font-bold tracking-tight;
   }
 }
 
@@ -60,17 +77,17 @@
 }
 
 .skribh-button {
-  @apply bg-red-600 text-white px-6 py-3 font-bold uppercase tracking-wider 
-         hover:bg-red-700 transition-colors duration-300 rounded-none;
+  @apply bg-skribh-blueprint text-white px-6 py-3 font-bold uppercase tracking-wider 
+         hover:bg-skribh-indigo transition-colors duration-300 rounded-none;
 }
 
 .skribh-button-outline {
-  @apply bg-transparent border-2 border-red-600 text-white px-6 py-3 font-bold uppercase tracking-wider 
-         hover:bg-red-600 transition-colors duration-300 rounded-none;
+  @apply bg-transparent border-2 border-skribh-blueprint text-black px-6 py-3 font-bold uppercase tracking-wider 
+         hover:bg-skribh-indigo transition-colors duration-300 rounded-none;
 }
 
 .skribh-card {
-  @apply bg-black border-l-4 border-red-600 p-6;
+  @apply bg-skribh-cloudwhite border-l-4 border-skribh-navy p-6;
 }
 
 /* Keep existing animations */
@@ -83,12 +100,16 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slideUp {
-  from { 
+  from {
     opacity: 0;
     transform: translateY(20px);
   }
@@ -100,7 +121,7 @@
 
 /* Red and black glass effect */
 .glass-card {
-  @apply bg-black/80 border-l-4 border-red-600 shadow-md;
+  @apply bg-skribh-cloudwhite/80 text-skribh-navy border-l-4 border-skribh-navy shadow-md;
 }
 
 .hover-lift {
@@ -109,23 +130,23 @@
 
 /* Blue/Purple gradient text for headings */
 .gradient-text {
-  @apply bg-gradient-to-r from-skribh-blueprint to-skribh-purple bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-skribh-navy to-skribh-blueprint bg-clip-text text-transparent;
 }
 
 /* Red gradient background */
 .gradient-bg {
-  @apply bg-gradient-to-r from-red-700 to-red-600;
+  @apply bg-gradient-to-r from-skribh-navy to-skribh-deepnavy;
 }
 
 /* Bold Phone Button */
 .phone-button {
-  @apply flex items-center justify-center gap-2 bg-red-600 text-white font-bold py-4 px-6 rounded-none 
-         text-xl hover:bg-red-700 transition-all ease-in-out duration-300;
+  @apply flex items-center justify-center gap-2 bg-skribh-navy text-white font-bold py-4 px-6 rounded-none 
+         text-xl hover:bg-skribh-navy transition-all ease-in-out duration-300;
 }
 
 /* Testimonial card */
 .testimonial-card {
-  @apply bg-black p-6 border-t-4 border-red-600 shadow-lg;
+  @apply bg-skribh-cloudwhite p-6 border-t-4 border-skribh-navy shadow-lg;
 }
 
 /* Trusted by section */
@@ -140,5 +161,15 @@
 
 /* Section styles */
 .section-dark {
-  @apply bg-black border-b border-red-600/20;
+  @apply bg-skribh-deepnavy border-b border-skribh-navy;
+}
+
+/* Section styles */
+.section-gray {
+  @apply bg-skribh-gray;
+}
+
+/* Section styles */
+.section-white {
+  @apply bg-skribh-cloudwhite border-b border-skribh-navy;
 }

@@ -22,6 +22,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
 import { Link as RouterLink } from "react-router-dom";
 import Header from "@/components/Header";
+import { Stethoscope } from "lucide-react";
 
 const Index = () => {
   const { toast } = useToast();
@@ -61,10 +62,10 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-skribh-cloudwhite text-white">
       <Header />
       {/* Hero Section - Red and black style with strong typography and ambulance image */}
-      <section className="relative py-20 bg-black border-b border-zinc-800">
+      <section className="relative py-20 bg-skribh-cloudwhite border-b border-skribh-darkgray">
         <div className="skribh-container">
           <div className="skribh-grid">
             <div className="col-span-12 md:col-span-6 flex flex-col justify-center">
@@ -72,16 +73,16 @@ const Index = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="text-6xl md:text-7xl font-bold mb-8 leading-none"
+                className="text-skribh-blueprint text-6xl md:text-7xl font-bold mb-8 leading-none"
               >
                 Intelligence That{" "}
-                <span className="text-red-600">Unlocks Impact</span>
+                <span className="text-skribh-navy">Unlocks Impact</span>
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-xl md:text-2xl text-zinc-300 mb-12 max-w-2xl"
+                className="text-xl md:text-2xl text-black mb-12 max-w-2xl"
               >
                 AI-driven emergency management software for EMS that transforms
                 conversations into accurate medical records
@@ -122,15 +123,15 @@ const Index = () => {
       </section>
 
       {/* EMS Directors Section with Ambulance Image */}
-      <section className="py-20 bg-black border-b border-zinc-800">
+      <section className="section-gray py-20 border-b border-skribh-darkgray">
         <div className="skribh-container">
           <div className="skribh-grid">
             <div className="col-span-12 md:col-span-6 flex items-center">
               <div>
-                <h2 className="text-4xl md:text-5xl font-bold mb-8">
+                <h2 className="text-skribh-navy text-4xl md:text-5xl font-bold mb-8">
                   EMS Directors: Transform Your Data
                 </h2>
-                <p className="text-xl mb-8 text-zinc-300">
+                <p className="text-xl mb-8 text-black">
                   Access unprecedented insights from your field operations while
                   maintaining the highest standards of data privacy and
                   security. Our AI works where you do - in the field,
@@ -140,24 +141,24 @@ const Index = () => {
             </div>
             <div className="col-span-12 md:col-span-6 mt-12 md:mt-0 flex justify-center">
               <div className="glass-card p-6 w-full max-w-md">
-                <h3 className="text-2xl font-bold mb-4 text-red-500">
+                <h3 className="text-2xl font-bold mb-4 text-skribh-navy">
                   Turn Data into Actionable Insights
                 </h3>
                 <ul className="space-y-4">
                   <li className="flex gap-3">
-                    <CheckCircle className="h-6 w-6 text-red-500 flex-shrink-0" />
+                    <CheckCircle className="h-6 w-6 text-skribh-navy flex-shrink-0" />
                     <span>Instant pattern detection and trend analysis</span>
                   </li>
                   <li className="flex gap-3">
-                    <CheckCircle className="h-6 w-6 text-red-500 flex-shrink-0" />
+                    <CheckCircle className="h-6 w-6 text-skribh-navy flex-shrink-0" />
                     <span>Customizable performance dashboards</span>
                   </li>
                   <li className="flex gap-3">
-                    <CheckCircle className="h-6 w-6 text-red-500 flex-shrink-0" />
+                    <CheckCircle className="h-6 w-6 text-skribh-navy flex-shrink-0" />
                     <span>Predictive insights for resource planning</span>
                   </li>
                   <li className="flex gap-3">
-                    <CheckCircle className="h-6 w-6 text-red-500 flex-shrink-0" />
+                    <CheckCircle className="h-6 w-6 text-skribh-navy flex-shrink-0" />
                     <span>Automated quality assurance checks</span>
                   </li>
                 </ul>
@@ -176,7 +177,7 @@ const Index = () => {
       {/* Effortless Documentation Section */}
       <section className="py-20 gradient-bg text-white">
         <div className="skribh-container">
-          <h2 className="text-4xl md:text-5xl font-bold text-left mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-left mb-16 text-white">
             Effortless Documentation
           </h2>
           <div className="skribh-grid">
@@ -204,8 +205,10 @@ const Index = () => {
                 className="col-span-12 md:col-span-4 p-6 border-l-2 border-white"
               >
                 <div className="mb-4">{feature.icon}</div>
-                <h3 className="text-2xl font-bold mb-2">{feature.title}</h3>
-                <p className="text-base">{feature.description}</p>
+                <h3 className="text-2xl font-bold mb-2 text-white">
+                  {feature.title}
+                </h3>
+                <p className="text-white">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -213,34 +216,34 @@ const Index = () => {
       </section>
 
       {/* Comprehensive Documentation Solutions Section */}
-      <section className="py-20 bg-black">
+      <section className="py-20 bg-skribh-cloudwhite">
         <div className="skribh-container">
           <h2 className="text-4xl md:text-5xl font-bold text-left mb-16">
             Comprehensive Documentation Solutions
           </h2>
           <div className="skribh-grid">
-            <div className="col-span-12 md:col-span-4 p-6 border-b border-red-600 hover:bg-black transition-all duration-300">
+            <div className="col-span-12 md:col-span-4 p-6 border-b border-skribh-navy hover:bg-skribh-cloudwhite transition-all duration-300">
               <h3 className="text-2xl font-bold mb-4">
                 Structured and unstructured data handling
               </h3>
-              <p className="text-zinc-300">
+              <p className="text-black">
                 Process all types of medical information regardless of format
               </p>
             </div>
-            <div className="col-span-12 md:col-span-4 p-6 border-b border-red-600 hover:bg-black transition-all duration-300">
+            <div className="col-span-12 md:col-span-4 p-6 border-b border-skribh-navy hover:bg-skribh-cloudwhite transition-all duration-300">
               <h3 className="text-2xl font-bold mb-4">
                 Compliance with NEMSIS standards
               </h3>
-              <p className="text-zinc-300">
+              <p className="text-black">
                 Ensures all documentation meets national EMS information system
                 requirements
               </p>
             </div>
-            <div className="col-span-12 md:col-span-4 p-6 border-b border-red-600 hover:bg-black transition-all duration-300">
+            <div className="col-span-12 md:col-span-4 p-6 border-b border-skribh-navy hover:bg-skribh-cloudwhite transition-all duration-300">
               <h3 className="text-2xl font-bold mb-4">
                 Compatibility with popular ePCR applications
               </h3>
-              <p className="text-zinc-300">
+              <p className="text-black">
                 Works with your existing electronic patient care record systems
               </p>
             </div>
@@ -249,28 +252,28 @@ const Index = () => {
       </section>
 
       {/* Technical Papers Section */}
-      <section className="py-20 bg-black text-white border-t border-zinc-800">
+      <section className="section-gray py-20 bg-skribh-cloudwhite text-white border-t border-skribh-darkgray">
         <div className="skribh-container">
           <div className="skribh-grid">
             <div className="col-span-12 md:col-span-6">
               <h2 className="text-4xl md:text-5xl font-bold mb-8">
                 Smarter Data, Better Outcomes
               </h2>
-              <p className="text-xl mb-8 text-zinc-300">
+              <p className="text-xl mb-8 text-black">
                 Our machine learning models identify patterns in audio data to
                 generate accurate medical documentation.
               </p>
-              <p className="text-xl mb-8 text-zinc-300">
+              <p className="text-xl mb-8 text-black">
                 Through iterative fine-tuning, Skribh constantly improves its
                 understanding of medical terminology and protocols.
               </p>
             </div>
             <div className="col-span-12 md:col-span-6 mt-12 md:mt-0">
-              <div className="bg-black p-8 border-l-4 border-red-600">
+              <div className="bg-skribh-cloudwhite p-8 border-l-4 border-skribh-navy">
                 <h3 className="text-2xl font-bold mb-6">
                   Transform your operations with intelligence-driven software
                 </h3>
-                <p className="mb-6 text-zinc-300">
+                <p className="mb-6 text-black">
                   Connect every critical data point across your EMS systems for
                   better patient outcomes and streamlined operations.
                 </p>
@@ -286,14 +289,17 @@ const Index = () => {
       </section>
 
       {/* Contact and Get Started Section */}
-      <section id="contact" className="py-20 bg-black border-t border-zinc-800">
+      <section
+        id="contact"
+        className="section-light py-20 bg-skribh-cloudwhite border-t border-skribh-darkgray"
+      >
         <div className="skribh-container">
           <div className="skribh-grid">
             <div className="col-span-12 md:col-span-5">
               <h2 className="text-4xl md:text-5xl font-bold mb-8">
                 Get Started with Skribh Today
               </h2>
-              <p className="text-xl text-zinc-300 mb-8">
+              <p className="text-xl text-black mb-8">
                 Contact us to learn how Skribh can transform your documentation
                 workflow and improve patient care.
               </p>
@@ -316,7 +322,7 @@ const Index = () => {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     required
-                    className="h-14 border-2 border-red-600 rounded-none bg-black text-white"
+                    className="h-14 border-2 border-skribh-navy rounded-none bg-skribh-cloudwhite text-white"
                   />
                 </div>
                 <div>
@@ -328,7 +334,7 @@ const Index = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="h-14 border-2 border-red-600 rounded-none bg-black text-white"
+                    className="h-14 border-2 border-skribh-navy rounded-none bg-skribh-cloudwhite text-white"
                   />
                 </div>
                 <div>
@@ -339,7 +345,7 @@ const Index = () => {
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     required
-                    className="border-2 border-red-600 rounded-none min-h-[150px] bg-black text-white"
+                    className="border-2 border-skribh-navy rounded-none min-h-[150px] bg-skribh-cloudwhite text-white"
                   />
                 </div>
                 <input
@@ -359,17 +365,17 @@ const Index = () => {
       </section>
 
       {/* Investment Section */}
-      <section className="py-16 bg-black border-t border-zinc-800">
+      <section className="section-dark py-16 bg-skribh-cloudwhite border-t border-skribh-darkgray">
         <div className="skribh-container">
           <div className="skribh-grid">
-            <div className="col-span-12 p-8 border-l-4 border-red-600 bg-black hover-lift">
+            <div className="col-span-12 p-8 border-l-4 border-skribh-navy bg-skribh-cloudwhite hover-lift">
               <div className="flex items-start mb-6">
-                <Briefcase className="h-12 w-12 text-red-600 mr-4" />
+                <Briefcase className="h-12 w-12 text-skribh-navy mr-4" />
                 <h3 className="text-3xl font-bold">
                   Interested in investing in Skribh?
                 </h3>
               </div>
-              <p className="text-xl mb-6 text-zinc-300">
+              <p className="text-xl mb-6 text-black">
                 The global EMS software market is projected to reach $9.3
                 billion by 2028, with a CAGR of 8.7% from 2023 to 2028.
               </p>
@@ -384,27 +390,29 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 bg-black text-white border-t border-zinc-800">
+      <footer className="py-12 bg-skribh-cloudwhite text-white border-t border-skribh-darkgray">
         <div className="skribh-container">
           <div className="skribh-grid">
             <div className="col-span-12 md:col-span-4">
-              <div className="text-3xl font-bold mb-4 text-red-600">Skribh</div>
-              <p className="mb-4 text-zinc-400">
+              <div className="text-3xl font-bold mb-4 text-skribh-navy">
+                <Stethoscope className="h-8 w-8" /> skribh
+              </div>
+              <p className="mb-4 text-black">
                 Revolutionizing prehospital care with AI-driven documentation
               </p>
             </div>
             <div className="col-span-12 md:col-span-4 md:col-start-9 text-right">
-              <div className="mb-4 text-zinc-400">
-                © 2023 Skribh. All rights reserved.
+              <div className="mb-4 text-black">
+                © 2025 skribh. All rights reserved.
               </div>
               <div className="flex justify-end space-x-4">
-                <a href="#" className="text-zinc-400 hover:text-red-500">
+                <a href="#" className="text-black hover:text-skribh-navy">
                   Privacy
                 </a>
-                <a href="#" className="text-zinc-400 hover:text-red-500">
+                <a href="#" className="text-black hover:text-skribh-navy">
                   Terms
                 </a>
-                <a href="#" className="text-zinc-400 hover:text-red-500">
+                <a href="#" className="text-black hover:text-skribh-navy">
                   Contact
                 </a>
               </div>
