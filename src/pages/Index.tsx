@@ -406,13 +406,10 @@ const Index = () => {
                 © 2025 skribh. All rights reserved.
               </div>
               <div className="flex justify-end space-x-4">
-                <a href="#" className="text-black hover:text-skribh-navy">
-                  Privacy
-                </a>
-                <a href="#" className="text-black hover:text-skribh-navy">
-                  Terms
-                </a>
-                <a href="#" className="text-black hover:text-skribh-navy">
+                <a
+                  href="/#contact"
+                  className="text-black hover:text-skribh-navy"
+                >
                   Contact
                 </a>
               </div>
