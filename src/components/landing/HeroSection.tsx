@@ -16,7 +16,7 @@ export const HeroSection = () => {
               transition={{ duration: 0.6 }}
               className="text-6xl md:text-7xl font-bold mb-8 leading-none"
             >
-              Intelligence That <span className="text-red-600">Unlocks Impact</span>
+              Revolutionizing Prehospital Care with <span className="text-red-600">AI-Driven Documentation</span>
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
