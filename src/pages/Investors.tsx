@@ -595,29 +595,6 @@ const Investors = () => {
   const renderLandingPage = () => (
     <div className="container mx-auto px-4 py-12">
       <div className="max-w-6xl mx-auto">
-        <div className="flex items-center justify-center mb-12">
-          <img 
-            src="/lovable-uploads/2e03f383-0ea8-4e5e-9345-164936ca73f4.png" 
-            alt="Skribh Logo" 
-            className="h-48 w-48 mr-6" 
-          />
-          <div>
-            <h1 className="text-6xl font-bold gradient-text">Skribh</h1>
-          </div>
-        </div>
-        
-        <div className="flex justify-center mb-8">
-          <Link to="/#contact">
-          <Button 
-            type="button"
-            className="skribh-button text-xl"
-            size="lg"
-          >
-            Contact Our Investment Team <Mail className="ml-2 h-5 w-5" />
-          </Button>
-          </Link>
-        </div>
-        
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-8">
           {investorResources.map((resource) => (
             <button 
@@ -640,6 +617,18 @@ const Investors = () => {
               </div>
             </button>
           ))}
+        </div>
+        
+        <div className="flex justify-center mt-8">
+          <Link to="/#contact">
+            <Button 
+              type="button"
+              className="skribh-button text-xl"
+              size="lg"
+            >
+              Contact <Mail className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
