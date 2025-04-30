@@ -11,7 +11,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist -b test-deploy-new",
+    "deploy": "gh-pages -d dist -b test-deploy-new-v2 -n",
     "deployDocs": "gh-pages deployment explanation: -d specifies the directory to deploy (dist), -b specifies the branch to deploy to (test-deploy), remove -b flag to use default 'gh-pages' branch"
   },
   "dependencies": {

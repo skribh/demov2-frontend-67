@@ -59,6 +59,19 @@ If you get a blank screen when GitHub Pages is pointing to a development branch:
 1. Make sure GitHub Pages is set to use a branch that contains **built files**, not source code
 2. Run the proper deployment process using `npm run deploy` from your development branch
 
+### Git Branch Reference Errors
+
+Sometimes when running `npm run deploy`, you might encounter an error like:
+```
+fatal: a branch named 'branch-name' already exists
+```
+
+This happens when a previous deployment attempt created internal git references but failed to complete. To fix this:
+
+1. Try using a different branch name by modifying the deploy script in package.json
+2. Add the `-n` flag to prevent creating a branch template: `gh-pages -d dist -b branch-name -n`
+3. If you know what you're doing, you can also try cleaning git's internal references manually (advanced)
+
 ### Testing Deployment Changes
 
 To test changes to the deployment process:
