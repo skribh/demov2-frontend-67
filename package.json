@@ -11,7 +11,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist -b test-deploy",
+    "deployDocs": "gh-pages deployment explanation: -d specifies the directory to deploy (dist), -b specifies the branch to deploy to (test-deploy), remove -b flag to use default 'gh-pages' branch"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
