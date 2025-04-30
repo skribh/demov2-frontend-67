@@ -72,6 +72,18 @@ This happens when a previous deployment attempt created internal git references 
 2. Add the `-n` flag to prevent creating a branch template: `gh-pages -d dist -b branch-name -n`
 3. If you know what you're doing, you can also try cleaning git's internal references manually (advanced)
 
+#### About Branch Templates
+
+**Note for future investigation:** In git, a 'branch template' refers to a temporary starting point that the gh-pages package uses when creating a deployment branch. When gh-pages runs, it:
+
+1. Creates a temporary clone of your repository
+2. Initializes a new branch (using a template of the starting state)
+3. Adds the content from your build directory
+4. Commits these changes
+5. Pushes to the remote repository
+
+When this process is interrupted or fails, it can leave behind template references that aren't visible in normal branch listings but cause errors during future deployment attempts. The `-n` flag bypasses this template creation process, which can help avoid these errors.
+
 ### Testing Deployment Changes
 
 To test changes to the deployment process:
