@@ -1,0 +1,281 @@
+{
+  "tracks": {
+    "hardware": {
+      "name": "Hardware Track",
+      "description": "India team, wearable prototypes, BT connectivity to mecha comet",
+      "color": "bg-blue-500",
+      "partner": "Silicon Signals (India team)",
+      "totalInvestment": 70000,
+      "timeline": {
+        "month1": {
+          "milestone": "Team Setup & PRD",
+          "payment": 9175,
+          "actions": ["Agreement signed", "Team assigned", "PRD development"],
+          "burnRate": 15000
+        },
+        "month2": {
+          "milestone": "Technical Specs Locked",
+          "payment": 9175,
+          "actions": ["Hardware requirements", "BT connectivity specs", "Mecha Comet integration"],
+          "burnRate": 12000
+        },
+        "month3": {
+          "milestone": "Schematic Complete",
+          "payment": 31175,
+          "actions": ["Design finalized", "Materials payment", "Prototype prep"],
+          "burnRate": 35000,
+          "highlight": true
+        },
+        "month4": {
+          "milestone": "First Prototype (EVT)",
+          "payment": 9175,
+          "actions": ["Hardware testing", "Paramedic feedback", "Iteration planning"],
+          "burnRate": 8000
+        },
+        "month5": {
+          "milestone": "Second Prototype (DVT)",
+          "payment": 0,
+          "actions": ["Improved design", "Field testing", "Validation"],
+          "burnRate": 5000
+        },
+        "month6": {
+          "milestone": "Final Testing & Validation",
+          "payment": 0,
+          "actions": ["Quality assurance", "Certification prep", "Manufacturing specs"],
+          "burnRate": 3000
+        }
+      }
+    },
+    "appDevelopment": {
+      "name": "App Development Track",
+      "description": "Software engineering, ML person, cloud spend, billing, user analytics",
+      "color": "bg-green-500",
+      "totalInvestment": 120000,
+      "timeline": {
+        "month1": {
+          "milestone": "Core Team Hiring",
+          "actions": ["ML engineer hired", "Cloud infrastructure setup", "Development environment"],
+          "burnRate": 25000
+        },
+        "month2": {
+          "milestone": "MVP Development",
+          "actions": ["Transcription engine", "HIPAA compliance", "Basic UI/UX"],
+          "burnRate": 22000
+        },
+        "month3": {
+          "milestone": "Paramedic Feedback Integration",
+          "actions": ["User testing", "Feedback loops", "Analytics setup"],
+          "burnRate": 20000
+        },
+        "month4": {
+          "milestone": "Beta Platform Launch",
+          "actions": ["Pilot deployment", "Billing system", "User onboarding"],
+          "burnRate": 18000
+        },
+        "month5": {
+          "milestone": "Scale & Optimization",
+          "actions": ["Performance tuning", "Advanced features", "Integration APIs"],
+          "burnRate": 20000
+        },
+        "month6": {
+          "milestone": "Production Ready",
+          "actions": ["Security audit", "Load testing", "Documentation"],
+          "burnRate": 15000
+        }
+      }
+    },
+    "businessDevelopment": {
+      "name": "Business Development Track", 
+      "description": "Client outreach, EMS director engagement, pilot commitments",
+      "color": "bg-purple-500",
+      "totalInvestment": 80000,
+      "timeline": {
+        "month1": {
+          "milestone": "EMS Director Outreach",
+          "actions": ["Target list creation", "Initial meetings", "Pilot proposals"],
+          "burnRate": 12000
+        },
+        "month2": {
+          "milestone": "Pilot Commitments",
+          "actions": ["3 pilot agreements", "Implementation planning", "Success metrics"],
+          "burnRate": 15000
+        },
+        "month3": {
+          "milestone": "Partner Relationships",
+          "actions": ["ImageTrend partnership", "EHR integrations", "Channel development"],
+          "burnRate": 18000
+        },
+        "month4": {
+          "milestone": "Pilot Execution",
+          "actions": ["Live deployments", "Training delivery", "Support systems"],
+          "burnRate": 14000
+        },
+        "month5": {
+          "milestone": "Success Stories",
+          "actions": ["Case studies", "ROI documentation", "Reference customers"],
+          "burnRate": 12000
+        },
+        "month6": {
+          "milestone": "Sales Pipeline",
+          "actions": ["Enterprise prospects", "Pricing finalization", "Contract templates"],
+          "burnRate": 9000
+        }
+      }
+    },
+    "marketingCommunity": {
+      "name": "Marketing/Community Track",
+      "description": "Conferences, Reddit, podcasts, blog posts, EMS training schools",
+      "color": "bg-orange-500", 
+      "totalInvestment": 45000,
+      "timeline": {
+        "month1": {
+          "milestone": "Content Strategy",
+          "actions": ["Blog launch", "Reddit presence", "EMS community engagement"],
+          "burnRate": 8000
+        },
+        "month2": {
+          "milestone": "Conference Circuit",
+          "actions": ["EMS conferences", "Speaking opportunities", "Demo presentations"],
+          "burnRate": 12000
+        },
+        "month3": {
+          "milestone": "Podcast & Media",
+          "actions": ["Podcast appearances", "Industry publications", "Thought leadership"],
+          "burnRate": 7000
+        },
+        "month4": {
+          "milestone": "Training School Partnerships",
+          "actions": ["Curriculum integration", "Student demos", "Educator relationships"],
+          "burnRate": 6000
+        },
+        "month5": {
+          "milestone": "Community Building",
+          "actions": ["User groups", "Beta community", "Feedback channels"],
+          "burnRate": 7000
+        },
+        "month6": {
+          "milestone": "Brand Recognition",
+          "actions": ["Industry awards", "Media coverage", "Analyst recognition"],
+          "burnRate": 5000
+        }
+      }
+    },
+    "complianceOperations": {
+      "name": "Compliance/Operations Track",
+      "description": "Regulatory setup, deployment readiness, financial models",
+      "color": "bg-red-500",
+      "totalInvestment": 60000,
+      "timeline": {
+        "month1": {
+          "milestone": "Regulatory Framework",
+          "actions": ["HIPAA compliance audit", "Legal structure", "Privacy policies"],
+          "burnRate": 15000
+        },
+        "month2": {
+          "milestone": "Deployment Infrastructure",
+          "actions": ["Cloud security", "Backup systems", "Monitoring setup"],
+          "burnRate": 12000
+        },
+        "month3": {
+          "milestone": "Financial Models",
+          "actions": ["Pricing strategy", "Revenue projections", "Cost analysis"],
+          "burnRate": 8000
+        },
+        "month4": {
+          "milestone": "Operations Scaling",
+          "actions": ["Support processes", "Training materials", "Quality assurance"],
+          "burnRate": 10000
+        },
+        "month5": {
+          "milestone": "Certification Prep",
+          "actions": ["Medical device pathway", "FDA consultation", "Standards compliance"],
+          "burnRate": 8000
+        },
+        "month6": {
+          "milestone": "Audit Ready",
+          "actions": ["Security certification", "Compliance documentation", "Risk management"],
+          "burnRate": 7000
+        }
+      }
+    },
+    "teamBuilding": {
+      "name": "Team Building Track",
+      "description": "Hiring devs, ML person, designer, paramedic-tech partner",
+      "color": "bg-yellow-500",
+      "totalInvestment": 90000,
+      "timeline": {
+        "month1": {
+          "milestone": "Core Team Expansion",
+          "actions": ["ML engineer hired", "Lead developer hired", "Recruiting pipeline"],
+          "burnRate": 20000
+        },
+        "month2": {
+          "milestone": "Design & UX",
+          "actions": ["UX designer hired", "Design system", "User research"],
+          "burnRate": 18000
+        },
+        "month3": {
+          "milestone": "Paramedic Partnership",
+          "actions": ["Paramedic-tech partner", "Clinical advisor", "Field expertise"],
+          "burnRate": 15000
+        },
+        "month4": {
+          "milestone": "Development Team",
+          "actions": ["Frontend developer", "DevOps engineer", "QA specialist"],
+          "burnRate": 16000
+        },
+        "month5": {
+          "milestone": "Specialized Roles",
+          "actions": ["Data scientist", "Customer success", "Technical writer"],
+          "burnRate": 12000
+        },
+        "month6": {
+          "milestone": "Leadership Team",
+          "actions": ["VP Engineering", "Head of Sales", "Operations manager"],
+          "burnRate": 9000
+        }
+      }
+    },
+    "fundraising": {
+      "name": "Fundraising Track",
+      "description": "Investor site, pitch deck, daily outreach to actual investors",
+      "color": "bg-indigo-500",
+      "totalInvestment": 35000,
+      "timeline": {
+        "month1": {
+          "milestone": "Investment Materials",
+          "actions": ["Pitch deck finalized", "Investor site live", "Financial projections"],
+          "burnRate": 8000
+        },
+        "month2": {
+          "milestone": "Investor Outreach",
+          "actions": ["VC meetings", "Angel introductions", "Demo days"],
+          "burnRate": 7000
+        },
+        "month3": {
+          "milestone": "Due Diligence Prep",
+          "actions": ["Data room setup", "Legal documents", "Reference calls"],
+          "burnRate": 6000
+        },
+        "month4": {
+          "milestone": "Term Sheet Negotiations",
+          "actions": ["Lead investor identified", "Terms negotiation", "Board discussions"],
+          "burnRate": 5000
+        },
+        "month5": {
+          "milestone": "Funding Round Close",
+          "actions": ["Legal documentation", "Wire transfers", "Announcement"],
+          "burnRate": 5000
+        },
+        "month6": {
+          "milestone": "Series A Prep",
+          "actions": ["Growth metrics", "Next round strategy", "Investor relations"],
+          "burnRate": 4000
+        }
+      }
+    }
+  },
+  "totalInvestment": 450000,
+  "peakCashMonth": 3,
+  "peakCashAmount": 118175
+}
